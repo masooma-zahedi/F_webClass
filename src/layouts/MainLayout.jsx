@@ -10,9 +10,9 @@ export default function MainLayout() {
   return (
     <div className="d-flex flex-column min-vh-100">
       {/* هدر */}
-      <header className="bg-dark text-white">
+      <header className="bg-success text-white">
         <nav className="navbar navbar-expand-lg navbar-dark container">
-          <Link className="navbar-brand" to="/">لوگو</Link>
+          <Link className="navbar-brand" to="/">Farsi Class</Link>
 
           {/* دکمه همبرگر */}
           <button
@@ -28,13 +28,13 @@ export default function MainLayout() {
           <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/" onClick={() => setIsOpen(false)}>خانه</Link>
+                <Link className="nav-link" to="/" onClick={() => setIsOpen(false)}>Alphabet</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/education" onClick={() => setIsOpen(false)}>آموزش</Link>
+                <Link className="nav-link" to="/word" onClick={() => setIsOpen(false)}>Word</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/news" onClick={() => setIsOpen(false)}>اخبار</Link>
+                <Link className="nav-link" to="/news" onClick={() => setIsOpen(false)}>Story</Link>
               </li>
             </ul>
           </div>
@@ -42,12 +42,12 @@ export default function MainLayout() {
       </header>
 
       {/* محتوای صفحه */}
-      <main className="flex-fill container my-4">
+      <main className="flex-fill container border border-danger my-4">
         <Outlet />
       </main>
 
       {/* فوتر */}
-      <footer className="bg-dark text-white text-center py-3 mt-auto">
+      <footer className="bg-success text-white text-center py-3 mt-auto">
         <small>© 2025 - تمام حقوق محفوظ است.</small>
       </footer>
     </div>

@@ -4,13 +4,16 @@ import MainLayout from "./layouts/MainLayout";
 import SectionLayout from "./layouts/SectionLayout";
 
 import Home from "./pages/Home";
-import EducationHome from "./sections/Education/EducationHome";
-import Math from "./sections/Education/Math";
-import Language from "./sections/Education/Language";
+import EducationHome from "./sections/word/EducationHome";
+import Math from "./sections/word/Math";
+import Language from "./sections/word/Language";
 import NewsHome from "./sections/News/NewsHome";
 import Politics from "./sections/News/Politics";
 import Sports from "./sections/News/Sports";
 import Tech from "./sections/News/Tech";
+import SentenceObject from "./sections/word/SentenceObject";
+import SentenceBuilder from "./sections/word/SentenceBuilder";
+import DragDropQuiz from "./sections/word/DragDropQuiz";
 
 
 export default function App() {
@@ -22,10 +25,52 @@ export default function App() {
 
           {/* بخش آموزش */}
           <Route
-            path="education"
+            path="word"
             element={
               <SectionLayout
-                basePath="/education"
+                basePath="/word"
+                menuItems={[
+                  { label: "صفحه اصلی", path: "" },
+                  { label: "ریاضیات", path: "math" },
+                  { label: "جملات و مترادف ها ", path: "sentenceObject" },
+                  { label: "جمله سازی", path: "SentenceBuilder" },
+                  { label: "کامل کردن جمله", path: "dragDropQuiz" },
+                  { label: "زبان", path: "language" }
+                ]}
+              />
+            }
+          >
+            <Route index element={<EducationHome />} />
+            <Route path="math" element={<Math />} />
+            <Route path="sentenceObject" element={<SentenceObject />} />
+            <Route path="sentenceBuilder" element={<SentenceBuilder />} />
+            <Route path="dragDropQuiz" element={<DragDropQuiz />} />
+            <Route path="language" element={<Language />} />
+          </Route>
+
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+          {/* بخش آموزش */}
+          {/* <Route
+            path="word"
+            element={
+              <SectionLayout
+                basePath="/word"
                 menuItems={[
                   { label: "صفحه اصلی", path: "" },
                   { label: "ریاضیات", path: "math" },
@@ -37,9 +82,4 @@ export default function App() {
             <Route index element={<EducationHome />} />
             <Route path="math" element={<Math />} />
             <Route path="language" element={<Language />} />
-          </Route>
-        </Route>
-      </Routes>
-    </Router>
-  );
-}
+          </Route> */}
