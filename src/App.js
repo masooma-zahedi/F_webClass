@@ -16,6 +16,8 @@ import SentenceBuilder from "./sections/word/SentenceBuilder";
 import DragDropQuiz from "./sections/word/DragDropQuiz";
 import TypingQAImageSlider from "./sections/word/TypingQAImageSlider";
 import { CardAlphaCompo } from "./sections/alphabet/CardAlphaCompo";
+import SyllableApp from "./sections/alphabet/SyllableApp";
+import WordGameWithCategories from "./sections/alphabet/WordGameWithCategories";
 
 
 export default function App() {
@@ -26,7 +28,7 @@ export default function App() {
           <Route index element={<Home />} />
 
           {/* بخش آموزش */}
-          {/* Alphabet pages */}
+          {/* *************************************** Alphabet pages********************* */}
           <Route
             path="alphabet"
             element={
@@ -35,9 +37,9 @@ export default function App() {
                 menuItems={[
                   { label: "صفحه اصلی", path: "" },
                   { label: "کارت الفبا", path: "cardAlphaCompo" },
-                  { label: "جمله سازی", path: "SentenceBuilder" },
-                  { label: "کامل کردن جمله", path: "dragDropQuiz" },
-                  { label: "تایپ جمله", path: "typingQAImageSlider" },
+                  { label: "بخش های کلمات", path: "syllableApp" },
+                  { label: "کارت کلمات", path: "wordGameWithCategories" },
+                  // { label: "تایپ جمله", path: "typingQAImageSlider" },
                   // { label: "زبان", path: "language" }
                 ]}
               />
@@ -45,11 +47,13 @@ export default function App() {
           >
             <Route index element={<EducationHome />} />
             <Route path="cardAlphaCompo" element={<CardAlphaCompo />} />
-            <Route path="sentenceObject" element={<SentenceObject />} />
-            <Route path="sentenceBuilder" element={<SentenceBuilder />} />
+            <Route path="syllableApp" element={<SyllableApp />} />
+            <Route path="wordGameWithCategories" element={<WordGameWithCategories />} />
+
+            {/* <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
             <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />
-            <Route path="language" element={<Language />} />
+            <Route path="language" element={<Language />} /> */}
           </Route>
 
           {/* word pages */}
