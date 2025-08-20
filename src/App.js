@@ -18,6 +18,9 @@ import TypingQAImageSlider from "./sections/word/TypingQAImageSlider";
 import { CardAlphaCompo } from "./sections/alphabet/CardAlphaCompo";
 import SyllableApp from "./sections/alphabet/SyllableApp";
 import WordGameWithCategories from "./sections/alphabet/WordGameWithCategories";
+import HighlightLetterText from "./sections/alphabet/HighlightLetterText";
+import { SylabeWords } from "./sections/alphabet/SylabeWords";
+import StoryPage3 from "./sections/story/StoryPage3";
 
 
 export default function App() {
@@ -29,7 +32,7 @@ export default function App() {
 
           {/* بخش آموزش */}
           {/* *************************************** Alphabet pages********************* */}
-          <Route
+          <Route 
             path="alphabet"
             element={
               <SectionLayout
@@ -39,16 +42,20 @@ export default function App() {
                   { label: "کارت الفبا", path: "cardAlphaCompo" },
                   { label: "بخش های کلمات", path: "syllableApp" },
                   { label: "کارت کلمات", path: "wordGameWithCategories" },
-                  // { label: "تایپ جمله", path: "typingQAImageSlider" },
+                  { label: "حرف قرمز کلمه", path: "highlightLetterText" },
+                  { label: "با هم بخوانیم", path: "sylabeWords" },
+                  { label: "داستان", path: "./story/storyPage3" }
                   // { label: "زبان", path: "language" }
                 ]}
               />
             }
           >
-            <Route index element={<EducationHome />} />
             <Route path="cardAlphaCompo" element={<CardAlphaCompo />} />
             <Route path="syllableApp" element={<SyllableApp />} />
             <Route path="wordGameWithCategories" element={<WordGameWithCategories />} />
+            <Route path="highlightLetterText" element={<HighlightLetterText />} />
+            <Route path="sylabeWords" element={<SylabeWords />} />
+            <Route path="story/StoryPage3" element={<StoryPage3 groupKey='alefba' />} />
 
             {/* <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
@@ -56,30 +63,48 @@ export default function App() {
             <Route path="language" element={<Language />} /> */}
           </Route>
 
-          {/* word pages */}
+          {/****************************************************  word pages******************** */}
           <Route
             path="word"
             element={
               <SectionLayout
                 basePath="/word"
                 menuItems={[
-                  { label: "صفحه اصلی", path: "" },
-                  { label: "جملات و مترادف ها ", path: "sentenceObject" },
+                  // { label: "صفحه اصلی", path: "" },
+                  { label: "جملات و مترادف ها ", path: "" },
                   { label: "جمله سازی", path: "SentenceBuilder" },
                   { label: "کامل کردن جمله", path: "dragDropQuiz" },
                   { label: "تایپ جمله", path: "typingQAImageSlider" },
+                  { label: "داستان", path: "./story/storyPage3" },
                   // { label: "زبان", path: "language" }
                 ]}
               />
             }
           >
-            <Route index element={<EducationHome />} />
-            <Route path="math" element={<Math />} />
-            <Route path="sentenceObject" element={<SentenceObject />} />
+            {/* <Route index element={<EducationHome />} /> */}
+            {/* <Route path="math" element={<Math />} /> */}
+            <Route path="" element={<SentenceObject />} />
             <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
             <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />
-            <Route path="language" element={<Language />} />
+            <Route path="story/StoryPage3" element={<StoryPage3 groupKey='kalemat' />} />
+            {/* <Route path="language" element={<Language />} /> */}
+          </Route>
+
+          {/************************************************** * story pages*********************** */}
+          <Route
+            path="story"
+            element={
+              <SectionLayout
+                basePath="/story"
+                menuItems={[
+                  { label: "داستان ", path: "" },
+                ]}
+              />
+            }
+          >
+            {/* <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />  */}
+            <Route path="" element={<StoryPage3 groupKey='dastan' />} />
           </Route>
 
         </Route>
