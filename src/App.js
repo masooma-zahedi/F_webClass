@@ -21,6 +21,7 @@ import WordGameWithCategories from "./sections/alphabet/WordGameWithCategories";
 import HighlightLetterText from "./sections/alphabet/HighlightLetterText";
 import { SylabeWords } from "./sections/alphabet/SylabeWords";
 import StoryPage3 from "./sections/story/StoryPage3";
+import LearnNewWords from "./sections/alphabet/LearnNewWords";
 
 
 export default function App() {
@@ -44,8 +45,9 @@ export default function App() {
                   { label: "کارت کلمات", path: "wordGameWithCategories" },
                   { label: "حرف قرمز کلمه", path: "highlightLetterText" },
                   { label: "با هم بخوانیم", path: "sylabeWords" },
-                  { label: "داستان", path: "./story/storyPage3" }
-                  // { label: "زبان", path: "language" }
+                  { label: "داستان", path: "./story/storyPage3" },
+                  { label: "معنی لغات جدید", path: "learnNewWords" },
+                  // { label: "زبان", path: "language" },
                 ]}
               />
             }
@@ -56,6 +58,7 @@ export default function App() {
             <Route path="highlightLetterText" element={<HighlightLetterText />} />
             <Route path="sylabeWords" element={<SylabeWords />} />
             <Route path="story/StoryPage3" element={<StoryPage3 groupKey='alefba' />} />
+            <Route path="LearnNewWords" element={<LearnNewWords />} />
 
             {/* <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
