@@ -164,13 +164,7 @@ export default function WordGameWithCategories() {
               <button className="btn btn-success" type="submit">
                 {editId ? "ویرایش واژه" : "افزودن واژه"}
               </button>
-                        <button
-          type="button"
-          className="btn btn-warning me-2"
-          onClick={() => setShowEditDelete(!showEditDelete)}
-        >
-          {showEditDelete ? "پنهان ویرایش/حذف" : "نمایش ویرایش/حذف"}
-        </button>
+        
 
               {editId && (
                 <button
@@ -181,6 +175,13 @@ export default function WordGameWithCategories() {
                   لغو
                 </button>
               )}
+              <button
+                type="button"
+                className="btn btn-warning me-2"
+                onClick={() => setShowEditDelete(!showEditDelete)}
+              >
+                {showEditDelete ? "پنهان ویرایش/حذف" : "نمایش ویرایش/حذف"}
+              </button>
             </form>
           )}
 
