@@ -417,7 +417,7 @@ export const CardAlphaCompo = () => {
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content colorful-modal">
                   <div className="modal-header">
-                    <h5 className="modal-title">نمونه‌های {letter.title}</h5>
+                    <h5 className="modal-title button" data-bs-dismiss="modal" aria-label="Close">نمونه‌های {letter.title}</h5>
                     <button
                       type="button"
                       className="btn-close"
@@ -447,7 +447,7 @@ export const CardAlphaCompo = () => {
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content colorful-modal">
                   <div className="modal-header">
-                    <h5 className="modal-title">صدای کوتاه 🎶</h5>
+                    <h5 className="modal-title button" data-bs-dismiss="modal" aria-label="Close">صدای کوتاه 🎶</h5>
                     <button
                       type="button"
                       className="btn-close"
@@ -477,7 +477,7 @@ export const CardAlphaCompo = () => {
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content colorful-modal">
                   <div className="modal-header">
-                    <h5 className="modal-title">صدای کشیده 🎵</h5>
+                    <h5 className="modal-title button" data-bs-dismiss="modal" aria-label="Close">صدای کشیده 🎵</h5>
                     <button
                       type="button"
                       className="btn-close"
