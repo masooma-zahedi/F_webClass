@@ -22,6 +22,8 @@ import HighlightLetterText from "./sections/alphabet/HighlightLetterText";
 import { SylabeWords } from "./sections/alphabet/SylabeWords";
 import StoryPage3 from "./sections/story/StoryPage3";
 import LearnNewWords from "./sections/alphabet/LearnNewWords";
+import GameRoom from "./sections/alphabet/GameRoom";
+import TableWords from "./sections/alphabet/TableWords";
 
 
 export default function App() {
@@ -47,6 +49,8 @@ export default function App() {
                   { label: "با هم بخوانیم", path: "sylabeWords" },
                   { label: "داستان", path: "./story/storyPage3" },
                   { label: "معنی لغات جدید", path: "learnNewWords" },
+                  { label: "اتاق بازی", path: "gameRoom" },
+                  { label: "جدول کلمات", path: "tableWords" },
                   // { label: "زبان", path: "language" },
                 ]}
               />
@@ -58,7 +62,9 @@ export default function App() {
             <Route path="highlightLetterText" element={<HighlightLetterText />} />
             <Route path="sylabeWords" element={<SylabeWords />} />
             <Route path="story/StoryPage3" element={<StoryPage3 groupKey='alefba' />} />
-            <Route path="LearnNewWords" element={<LearnNewWords />} />
+            <Route path="learnNewWords" element={<LearnNewWords />} />
+            <Route path="gameRoom/*" element={<GameRoom />} />
+            <Route path="tableWords/*" element={<TableWords />} />
 
             {/* <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
