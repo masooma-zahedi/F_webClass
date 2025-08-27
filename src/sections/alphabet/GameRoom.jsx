@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import SectionLayout from '../../layouts/SectionLayout';
 import BouncingBalls from './BouncingBalls';
 import { Link, Outlet } from "react-router-dom"; 
+import CupGame from './CupGame';
 // import AnotherComponent from './AnotherComponent';
 
 
@@ -10,7 +11,7 @@ import { Link, Outlet } from "react-router-dom";
 
 
 export default function AlphabetRoutes() {
-    const [menuItems,setMenuItems] = useState([{ label: "بالانس کلمات", path: "bouncingBalls" },])
+    const [menuItems,setMenuItems] = useState([{ label: "بالانس کلمات", path: "bouncingBalls" },{ label: "توپ و لیوان", path: "cupGame" },])
     const [basePath,setBasePath] = useState ('gameRoom')
   return (
     <>
@@ -33,6 +34,7 @@ export default function AlphabetRoutes() {
     <Routes>
         <Route index element={<BouncingBalls />} />
         <Route path="bouncingBalls" element={<BouncingBalls />} />
+        <Route path="cupGame" element={<CupGame />} />
     </Routes>
     </>
   );
