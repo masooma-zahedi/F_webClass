@@ -24,6 +24,7 @@ import StoryPage3 from "./sections/story/StoryPage3";
 import LearnNewWords from "./sections/alphabet/LearnNewWords";
 import GameRoom from "./sections/alphabet/GameRoom";
 import TableWords from "./sections/alphabet/TableWords";
+import SunWordsWords from "./sections/word/SunWordsWord";
 
 
 export default function App() {
@@ -41,8 +42,8 @@ export default function App() {
               <SectionLayout
                 basePath="/alphabet"
                 menuItems={[
-                  { label: "صفحه اصلی", path: "" },
-                  { label: "کارت الفبا", path: "cardAlphaCompo" },
+                  // { label: "صفحه اصلی", path: "" },
+                  { label: "کارت الفبا", path: "" },
                   { label: "بخش های کلمات", path: "syllableApp" },
                   { label: "کارت کلمات", path: "wordGameWithCategories" },
                   { label: "حرف قرمز کلمه", path: "highlightLetterText" },
@@ -56,7 +57,7 @@ export default function App() {
               />
             }
           >
-            <Route path="cardAlphaCompo" element={<CardAlphaCompo />} />
+            <Route path="" element={<CardAlphaCompo />} />
             <Route path="syllableApp" element={<SyllableApp />} />
             <Route path="wordGameWithCategories" element={<WordGameWithCategories />} />
             <Route path="highlightLetterText" element={<HighlightLetterText />} />
@@ -80,7 +81,8 @@ export default function App() {
                 basePath="/word"
                 menuItems={[
                   // { label: "صفحه اصلی", path: "" },
-                  { label: "جملات و مترادف ها ", path: "" },
+                  { label: "کلمات آفتابگردان", path: "" },
+                  { label: "جملات و مترادف ها ", path: "sentenceObject" },
                   { label: "جمله سازی", path: "SentenceBuilder" },
                   { label: "کامل کردن جمله", path: "dragDropQuiz" },
                   { label: "تایپ جمله", path: "typingQAImageSlider" },
@@ -92,7 +94,8 @@ export default function App() {
           >
             {/* <Route index element={<EducationHome />} /> */}
             {/* <Route path="math" element={<Math />} /> */}
-            <Route path="" element={<SentenceObject />} />
+            <Route path="" element={<SunWordsWords />} />
+            <Route path="sentenceObject" element={<SentenceObject />} />
             <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
             <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />
