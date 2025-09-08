@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // import BouncingBalls from './BouncingBalls';
 import { Link, Outlet } from "react-router-dom"; 
 import SunWords from './sunWords';
+import BrokenGlass from './BrokenGlass';
 // import AnotherComponent from './AnotherComponent';
 
 
@@ -11,7 +12,7 @@ import SunWords from './sunWords';
 
 
 export default function TableWords() {
-    const [menuItems,setMenuItems] = useState([{ label: "کلمات آفتابگردان", path: "sunWords" },])
+    const [menuItems,setMenuItems] = useState([{ label: "کلمات آفتابگردان", path: "sunWords" },{ label: "جعبه شیشه ای ", path: "brokenGlass" },])
     const [basePath,setBasePath] = useState ('TableWords')
   return (
     <>
@@ -34,6 +35,7 @@ export default function TableWords() {
     <Routes>
         <Route index element={<SunWords />} />
         <Route path="sunWords" element={<SunWords />} />
+        <Route path="brokenGlass" element={<BrokenGlass />} />
     </Routes>
     </>
   );

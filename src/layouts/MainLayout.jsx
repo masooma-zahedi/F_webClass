@@ -45,6 +45,9 @@ export default function MainLayout() {
             </ul>
           </div>
         </nav>
+        <div style={{height:"400px", opacity:"0.9"}}>
+          <img className='w-100 h-100' src="/images/webPic/ad-2.png" alt="" />
+        </div>
       </header>
 
       {/* محتوای صفحه */}
