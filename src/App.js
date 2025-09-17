@@ -7,10 +7,6 @@ import Home from "./pages/Home";
 import EducationHome from "./sections/word/EducationHome";
 import Math from "./sections/word/Math";
 import Language from "./sections/word/Language";
-import NewsHome from "./sections/News/NewsHome";
-import Politics from "./sections/News/Politics";
-import Sports from "./sections/News/Sports";
-import Tech from "./sections/News/Tech";
 import SentenceObject from "./sections/word/SentenceObject";
 import SentenceBuilder from "./sections/word/SentenceBuilder";
 import DragDropQuiz from "./sections/word/DragDropQuiz";
@@ -25,6 +21,7 @@ import LearnNewWords from "./sections/alphabet/LearnNewWords";
 import GameRoom from "./sections/alphabet/GameRoom";
 import TableWords from "./sections/alphabet/TableWords";
 import SunWordsWords from "./sections/word/SunWordsWord";
+import TodayPlan from "./pages/TodayPlan";
 
 
 export default function App() {
@@ -118,6 +115,8 @@ export default function App() {
             {/* <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />  */}
             <Route path="" element={<StoryPage3 groupKey='dastan' />} />
           </Route>
+
+          <Route path="/todayPlan" element={<TodayPlan />} />
 
         </Route>
       </Routes>

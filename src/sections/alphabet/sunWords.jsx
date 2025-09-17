@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from "react";
 
-export default function SunWords() {
+export default function SunWords({idPage}) {
   const categories = {
-    صداکوتاه: {
-      circle: "-ُ -ِ -َ",
-      boxes: ["بَ", "رِ", "اُ","بِ","رَ","اِ","بُ","رُ","اُ",]
+    صداآ: {
+      circle: "ا",
+      boxes: ["با","آ","تا","را","پا","دا","با","تا","دا","را","پا","آ","تا",]
+    },
+    صدا_و: {
+      circle: "او-و",
+      boxes: ["تو","او","بو","پو","رو","دو","او","رو","پو","دو","بو","تو","دو",]
     },
     صداکوتاه2: {
       circle: "-ُ -ِ -َ",
-      boxes: ["بَ", "رِ","نُ", "اُ","بِ","نَ","رَ","اِ","بُ","رُ","نِ","اُ",]
+      boxes: ["بَ", "رِ","تُ","پُ","دَ","تَ", "اُ","بِ","تِ","پِ","رَ","تِ","دِ","اِ","بُ","تَ","رُ","پَ","اُ","دُ","تُ",]
     },
-    ریست: {
-      circle: "2معصومه",
-      boxes: ["mujtaba2", "fatima2", "zahra2"]
+    ه: {
+      circle: "کلمات ه",
+      boxes: [
+  "هیزُم","هَمکار","هَمر اه","هَفته","حال","هَشتُم","هُوش",
+  "هِزارپا","هَمه","کُوه","چاه","راه","نامِه","خانِه","شانِه",
+  "کاه","گِیاه","دانِه","ماه","سِپیدِه","آهُو","شیشِه",
+  "کُلاه","آگاه","قَهوه","شُجاعانِه"
+]
+
+
     }
   };
 
@@ -21,9 +32,9 @@ export default function SunWords() {
     "#009688", "#4caf50", "#ff9800", "#795548", "#607d8b"
   ];
 
-  const [category, setCategory] = useState("صداکوتاه"); // دسته انتخابی
-  const [words, setWords] = useState(categories["صداکوتاه"].boxes);
-  const [circleText, setCircleText] = useState(categories["صداکوتاه"].circle);
+  const [category, setCategory] = useState("صداآ"); // دسته انتخابی
+  const [words, setWords] = useState(categories["صداآ"].boxes);
+  const [circleText, setCircleText] = useState(categories["صداآ"].circle);
   const [rotationDeg, setRotationDeg] = useState(0);
   const [rotating, setRotating] = useState(false);
   const [selected, setSelected] = useState(null);
@@ -32,7 +43,7 @@ export default function SunWords() {
   const [showListSun, setShowListSun] = useState(false);
 
     const popSound = new Audio("/sounds/pop-1.wav");
-    popSound.volume = 0.3;
+    popSound.volume = 0.5;
 
 
   const norm = (x) => ((x % 360) + 360) % 360;
@@ -96,7 +107,7 @@ export default function SunWords() {
   const radius = 160;
 
   return (
-    <div className=" container rounded-3" style={{ display: "flex", gap: "20px", backgroundColor: " #ebf4dd99" }}>
+    <div className=" container rounded-3" idPage={idPage}  style={{ display: "flex", gap: "20px", backgroundColor: " #ebf4dd99" }}>
       {/* فهرست دسته‌ها */}
         <div style={styles.sidebar}>
           <h3 className="btn btn-success" onClick={()=>setShowListSun(!showListSun)}>دسته‌بندی‌ها</h3>

@@ -5,6 +5,7 @@ import BouncingBalls from './BouncingBalls';
 import { Link, Outlet } from "react-router-dom"; 
 import CupGame from './CupGame';
 import MatchGame from './MatchGame';
+import ObjectSentenceGame from './ObjectSentenceGame';
 // import AnotherComponent from './AnotherComponent';
 
 
@@ -12,9 +13,11 @@ import MatchGame from './MatchGame';
 
 
 export default function AlphabetRoutes() {
-    const [menuItems,setMenuItems] = useState([{ label: "بالانس کلمات", path: "bouncingBalls" },
+    const [menuItems,setMenuItems] = useState([
+      { label: "بالانس کلمات", path: "bouncingBalls" },
       { label: "توپ و لیوان", path: "cupGame" },
       { label: "جفت سازی کلمات", path: "matchGame" },
+      { label: "جمله سازی با تصویر", path: "objectSentenceGame" },
     ])
     const [basePath,setBasePath] = useState ('gameRoom')
   return (
@@ -40,6 +43,7 @@ export default function AlphabetRoutes() {
         <Route path="bouncingBalls" element={<BouncingBalls />} />
         <Route path="cupGame" element={<CupGame />} />
         <Route path="matchGame" element={<MatchGame />} />
+        <Route path="objectSentenceGame" element={<ObjectSentenceGame />} />
     </Routes>
     </>
   );
