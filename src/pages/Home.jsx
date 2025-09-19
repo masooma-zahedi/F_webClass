@@ -1,5 +1,8 @@
 import React from "react";
+import { CardAlphaCompo } from "../sections/alphabet/CardAlphaCompo";
 
 export default function Home() {
-  return <h2>  Home pages صفحه اصلی سایت</h2>;
+  return (<>
+    <CardAlphaCompo/>
+  </>)
 }
