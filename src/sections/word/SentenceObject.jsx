@@ -15,6 +15,7 @@ const lessonGroups = [
   // جلمات صبحانه
     {
     title: " صُبحانِه ",
+    imgSide:"/images/assetWord/girlSitting.png",
     slides: [
         {
         sentence: "مَن صُبحانِه خوردَم.",
@@ -115,6 +116,7 @@ const lessonGroups = [
   // جملات حرف پ
     {
     title: "جُملات حرف پ",
+    imgSide:"/images/assetWord/designPage/girlFlower.png",
     slides: [
         {
           sentence: "پِدَر کُت پوشید.",
@@ -181,6 +183,7 @@ const lessonGroups = [
 // (باید عکس ها را عوض کنی!!!!!)
     {
       title: "جُملات حرف خ",
+      imgSide:"https://clipart-library.com/images/dc4ok8Loi.jpg",
       slides: [
         {
           sentence: "اُستاد با میخ و تَخته تَخت می سازَد.",
@@ -259,6 +262,7 @@ const SentenceObject = () => {
   const [selectedWord, setSelectedWord] = useState(null);
   const [showSidebar, setShowSidebar] = useState(true);
   const [mainTitle, setMainTitle] = useState("صبحانه");
+  const [imgSide, setImgSide] = useState("/images/assetWord/girlSitting.png");
 
   // states for highlighting
   const [highlightChar, setHighlightChar] = useState("");
@@ -268,8 +272,9 @@ const SentenceObject = () => {
   const currentSlides = currentGroup.slides;
   const currentWords = currentSlides[activeSlideIndex].words;
 
-  const handleGroupSelect = (index, i) => {
+  const handleGroupSelect = (index, i,imgS) => {
     setMainTitle(i);
+    setImgSide(imgS);
     setActiveGroupIndex(index);
     setActiveSlideIndex(0);
     setSelectedWord(null);
@@ -376,10 +381,11 @@ const SentenceObject = () => {
                   key={index}
                   active={index === activeGroupIndex}
                   action
-                  onClick={() => handleGroupSelect(index, group.title)}
+                  onClick={() => handleGroupSelect(index, group.title,group.imgSide)}
                 >
                   {group.title}
                 </ListGroup.Item>
+
               ))}
             </ListGroup>
           </Col>
@@ -435,14 +441,23 @@ const SentenceObject = () => {
 
           <div style={{ minHeight: "500px" }}>
             {selectedWord && (
-              <Row className="mt-4 justify-content-center text-center">
-                <Col md={5} className="bg-warning p-2 rounded" style={{ width: "400px" }}>
-                  <Image className="w-100" src={selectedWord.image} fluid rounded />
-                  <p className="mt-2 h2 fs-2" style={{ color: "rgb(240, 19, 148)" }}>
-                    {selectedWord.translation}
-                  </p>
-                </Col>
-              </Row>
+              <>
+              {/* <div className="border border-info" style={{position:"relative"}}> */}
+                <Row className="mt-4 justify-content-center text-center">
+                  <Col md={5} className="bg-warning p-2 rounded" style={{ width: "400px" }}>
+                    <Image className="w-100" src={selectedWord.image} fluid rounded />
+                    <p className="mt-2 h2 fs-2" style={{ color: "rgb(240, 19, 148)" }}>
+                      {selectedWord.translation}
+                    </p>
+                  </Col>
+                  <div className=" col-sm-0 col-md-3 mt-5"  >
+                    <img src={imgSide}  className=" w-50 h-50" alt="" />
+                  </div>
+                </Row>
+
+              {/* </div> */}
+              
+              </>
             )}
           </div>
         </Col>
