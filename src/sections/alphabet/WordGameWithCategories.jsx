@@ -259,9 +259,9 @@ export default function WordGameWithCategories() {
 
         .word-card.active {
           transform: scale(1.1) rotate(-2deg);
-          box-shadow: 0 10px 25px rgba(255, 200, 0, 0.6);
-          border: 3px solid #ffcc00;
-          background: linear-gradient(145deg, #fffbea, #fff3c4);
+          box-shadow: 0 10px 25px rgba(255, 0, 255, 0.6);
+          border: 3px solid #ff0088ff;
+          background: linear-gradient(145deg, #fdeaffff, #ffc4edff);
         }
 
         .bounce {
