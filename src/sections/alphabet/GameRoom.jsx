@@ -7,6 +7,7 @@ import CupGame from './CupGame';
 import MatchGame from './MatchGame';
 import ObjectSentenceGame from './ObjectSentenceGame';
 import SpellingGame from './SpellingGame';
+import AngryWordSlingFull from './AngryWordSlingFull';
 // import AnotherComponent from './AnotherComponent';
 
 
@@ -20,6 +21,7 @@ export default function AlphabetRoutes() {
       { label: "جفت سازی کلمات", path: "matchGame" },
       { label: "جمله سازی با تصویر", path: "objectSentenceGame" },
       { label: "هجی کلمات", path: "spellingGame" },
+      { label: "پرنده عصبانی", path: "AngryWordSlingFull" },
     ])
     const [basePath,setBasePath] = useState ('gameRoom')
   return (
@@ -47,6 +49,7 @@ export default function AlphabetRoutes() {
         <Route path="matchGame" element={<MatchGame />} />
         <Route path="objectSentenceGame" element={<ObjectSentenceGame />} />
         <Route path="spellingGame" element={<SpellingGame />} />
+        <Route path="angryWordSlingFull" element={<AngryWordSlingFull />} />
     </Routes>
     </>
   );

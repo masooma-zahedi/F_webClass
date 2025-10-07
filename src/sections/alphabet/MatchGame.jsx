@@ -88,6 +88,24 @@ const bathItems = [
   { id: 13, word: 'وان حمام', image: 'https://as2.ftcdn.net/jpg/02/97/22/83/1000_F_297228382_4NN3RAuZTdc4A0qZWyBexgsVt6BLOFwJ.jpg' },
   { id: 15, word: 'دوش', image: 'https://t4.ftcdn.net/jpg/01/23/78/13/360_F_123781353_rLB4kTmqwgoWpW0YNBjGN8Vu99PCFXIw.jpg' }
 ];
+const schoolSupplies = [
+  { id: 1, word: "قیچی", image: "https://charatoon.com/photo/10081.png" },
+  { id: 2, word: "خط کش", image: "https://i.pinimg.com/736x/07/04/cd/0704cda084fddf29a8d40a447977d422.jpg" },
+  { id: 3, word: "صندلی", image: "https://thumbs.dreamstime.com/b/d-rendering-school-chair-isolated-white-background-ideal-education-classroom-furniture-related-themes-cartoon-366915616.jpg" },
+  { id: 4, word: "کاغذ", image: "https://img.freepik.com/premium-vector/hand-drawn-paper-cartoon-illustration_23-2151474658.jpg" },
+  { id: 5, word: "چسب", image: "https://png.pngtree.com/png-clipart/20250531/original/pngtree-cute-cartoon-glue-bottle-school-supplies-adhesive-craft-png-image_21103651.png" },
+  { id: 6, word: "خودکار", image: "https://img.pixers.pics/pho_wat(s3:700/FO/24/26/87/32/700_FO24268732_c18e5e8a5fd6dafd334266cad5337614.jpg,358,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,138,650,jpg)/wall-murals-pen-cartoon.jpg.jpg" },
+  { id: 7, word: "ماژیک", image: "https://cdn.vectorstock.com/i/500p/19/21/cheerful-cartoon-marker-pen-vector-51341921.jpg" },
+  { id: 8, word: "پاک‌کن", image: "https://thumbs.dreamstime.com/z/cartoon-happy-eraser-illustration-53892555.jpg" },
+  { id: 9, word: "کیف", image: "https://t4.ftcdn.net/jpg/15/14/49/97/360_F_1514499759_4ws45WRpsZvVJvGmbCP5iE5jNXoYgrbj.jpg" },
+  { id: 10, word: "مداد", image: "https://i.etsystatic.com/40533556/r/il/b58af9/6112668721/il_1080xN.6112668721_qfn0.jpg" },
+  // { id: 11, word: "کتاب", image: "https://previews.123rf.com/images/dualororua/dualororua1707/dualororua170700423/83227038-vector-illustration-of-book-cartoon-on-pile-book.jpg" },
+  // { id: 12, word: "جامدادی", image: "https://previews.123rf.com/images/clairev/clairev1807/clairev180700082/114771248-pencil-case-theme-image-2-eps10-vector-illustration.jpg" },
+  // { id: 13, word: "دفتر", image: "https://charatoon.com/photo/3626.png" },
+  // { id: 14, word: "میز", image: "https://www.shutterstock.com/image-vector/school-desk-chair-260nw-613913594.jpg" },
+  // { id: 15, word: "تراش", image: "https://thumbs.dreamstime.com/b/pencil-sharpener-15057545.jpg" }
+];
+
 
 
 
@@ -239,6 +257,7 @@ const MatchGame = () => {
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(transport1,'item5')}>حمل و نقل</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(diningTableItems,'item6')}>میز غذاخوری</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(bathItems ,'item7')}>وسایل حمام</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(schoolSupplies ,'item8')}>وسایل مدرسه</button>
                   </div>
                 </div>
                 <div class="modal-footer">
