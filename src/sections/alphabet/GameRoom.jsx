@@ -6,6 +6,7 @@ import { Link, Outlet } from "react-router-dom";
 import CupGame from './CupGame';
 import MatchGame from './MatchGame';
 import ObjectSentenceGame from './ObjectSentenceGame';
+import SpellingGame from './SpellingGame';
 // import AnotherComponent from './AnotherComponent';
 
 
@@ -18,6 +19,7 @@ export default function AlphabetRoutes() {
       { label: "توپ و لیوان", path: "cupGame" },
       { label: "جفت سازی کلمات", path: "matchGame" },
       { label: "جمله سازی با تصویر", path: "objectSentenceGame" },
+      { label: "هجی کلمات", path: "spellingGame" },
     ])
     const [basePath,setBasePath] = useState ('gameRoom')
   return (
@@ -44,6 +46,7 @@ export default function AlphabetRoutes() {
         <Route path="cupGame" element={<CupGame />} />
         <Route path="matchGame" element={<MatchGame />} />
         <Route path="objectSentenceGame" element={<ObjectSentenceGame />} />
+        <Route path="spellingGame" element={<SpellingGame />} />
     </Routes>
     </>
   );
