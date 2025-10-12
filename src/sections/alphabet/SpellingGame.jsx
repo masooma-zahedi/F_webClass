@@ -28,6 +28,35 @@ const collections = {
     { id: nanoid(), word: "میز", image: "https://www.shutterstock.com/image-vector/school-desk-chair-260nw-613913594.jpg",title: "Desk / Table", direction: "horizontal", extraTiles: ["ط","ظ"] },
     { id: nanoid(), word: "تراش", image: "https://thumbs.dreamstime.com/b/pencil-sharpener-15057545.jpg",title: "Sharpener", direction: "horizontal", extraTiles: ["ل","ی"] },
   ],
+  "داستان پیک نیک": [
+  { id: nanoid(), word: "ماشین", image: "https://img.freepik.com/premium-vector/car-vector-illustration-classic-red-car-cartoon-transportation_648083-206.jpg", title: "Car", direction: "horizontal", extraTiles: ["ر","ن","ب"] },
+  // { id: nanoid(), word: "اسباب‌بازی", image: "https://thumbs.dreamstime.com/b/heap-toys-eps-vector-illustration-48098461.jpg", title: "Toy", direction: "horizontal", extraTiles: ["گ","د","ل"] },
+  { id: nanoid(), word: "گل", image: "https://png.pngtree.com/png-vector/20240914/ourmid/pngtree-color-cartoon-flowers-png-image_13393417.png", title: "Flower", direction: "horizontal", extraTiles: ["ب","م","ر"] },
+  { id: nanoid(), word: "اردک", image: "https://static.vecteezy.com/system/resources/previews/048/507/915/non_2x/cute-baby-duck-cartoon-illustration-isolated-on-white-background-vector.jpg", title: "Duck", direction: "horizontal", extraTiles: ["ق","س","ن"] },
+  // { id: nanoid(), word: "پیک‌نیک", image: "https://www.shutterstock.com/image-vector/happy-family-on-picnic-dad-600nw-2086473274.jpg", title: "Picnic", direction: "horizontal", extraTiles: ["و","پ","ج"] },
+  // { id: nanoid(), word: "ساندویچ", image: "https://img.freepik.com/premium-vector/retro-cartoon-sub-sandwich-vector-illustration-stock-photos_1323048-25025.jpg", title: "Sandwich", direction: "horizontal", extraTiles: ["ق","ر","ز"] },
+  { id: nanoid(), word: "سیب", image: "https://cdn.pixabay.com/photo/2019/10/03/01/44/apple-4522286_1280.png", title: "Apple", direction: "horizontal", extraTiles: ["ت","ل","ح"] },
+  { id: nanoid(), word: "پرنده", image: "https://static.vecteezy.com/system/resources/previews/008/387/557/non_2x/cartoon-happy-little-bird-flying-vector.jpg", title: "Bird", direction: "horizontal", extraTiles: ["ش","ک","ن"] },
+  { id: nanoid(), word: "سنجاب", image: "https://img.freepik.com/premium-photo/3d-squirrel-cute-cartoon-character_862994-72419.jpg", title: "Squirrel", direction: "horizontal", extraTiles: ["پ","غ","ه"] },
+  { id: nanoid(), word: "فَندُق", image: "https://thumbs.dreamstime.com/b/cheerful-firefly-hazelnut-character-explores-sunny-woodland-surrounded-scattered-hazelnuts-warm-sunlight-filtering-398876260.jpg", title: "Hazelnut", direction: "horizontal", extraTiles: ["ب","س","چ"] },
+  { id: nanoid(), word: "دریاچه", image: "https://thumbs.dreamstime.com/b/cartoon-modern-background-mountain-lake-dock-boat-summer-landscape-water-trees-beautiful-sky-outdoors-316736594.jpg", title: "Lake", direction: "horizontal", extraTiles: ["ق","م","ز"] },
+  { id: nanoid(), word: "سنگ", image: "https://png.pngtree.com/background/20230410/original/pngtree-lawn-color-stone-cartoon-background-picture-image_2383302.jpg", title: "Stone", direction: "horizontal", extraTiles: ["ک","ف","ب"] },
+  { id: nanoid(), word: "ستاره‌", image: "https://static.vecteezy.com/system/resources/previews/002/547/979/non_2x/sleepy-star-in-the-night-sky-free-vector.jpg", title: "Star", direction: "horizontal", extraTiles: ["ل","ح","د"] },
+  { id: nanoid(), word: "خوراکی", image: "https://png.pngtree.com/png-clipart/20250111/original/pngtree-snacks-png-image_19912509.png", title: "Snack / Food", direction: "horizontal", extraTiles: ["ف","ش","ت"] },
+],
+"پاییز_و_خارپشت": [
+  { id: nanoid(), word: "خارپشت", image: "https://thumbs.dreamstime.com/b/cute-animated-hedgehog-illustration-cartoon-style-design-hedgehog-cute-animated-hedgehog-illustration-cartoon-363412797.jpg", title: "Hedgehog", direction: "horizontal", extraTiles: ["س","م"] },
+  { id: nanoid(), word: "برگ‌", image: "https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-cute-fall-leaves-clipart-various-autumn-leaves-set-cartoon-vector-png-image_6867180.png", title: "Leaf", direction: "horizontal", extraTiles: ["ت","پ"] },
+  { id: nanoid(), word: "درخت", image: "https://i.pinimg.com/736x/fe/fe/44/fefe4472da490edabdf71bd471352f15.jpg", title: "Tree", direction: "horizontal", extraTiles: ["ف","گ"] },
+  { id: nanoid(), word: "پاییز", image: "https://t4.ftcdn.net/jpg/11/49/68/49/360_F_1149684918_BajC4EcED7p8GH45HN4pOLcHxURgW8mj.jpg", title: "Autumn / Fall", direction: "horizontal", extraTiles: ["ش","ر"] },
+  { id: nanoid(), word: "زمین", image: "https://img.freepik.com/free-vector/low-point-view-nature-landscape_1308-92523.jpg?semt=ais_hybrid&w=740&q=80", title: "Ground / Earth", direction: "horizontal", extraTiles: ["چ","د"] },
+  { id: nanoid(), word: "رنگی", image: "https://png.pngtree.com/thumb_back/fh260/background/20240104/pngtree-vibrant-cartoon-texture-a-playful-and-colorful-background-image_13880204.png", title: "Colorful", direction: "horizontal", extraTiles: ["ب","م"] },
+  { id: nanoid(), word: "استراحت", image: "https://media.istockphoto.com/id/933020166/vector/cute-cartoon-boy-sleep-in-bed-good-dream-rest-character-vector-illustration.jpg?s=170667a&w=0&k=20&c=CV5uGI7uD7HDJWcPSDuhhRoxU08e9yhBP9_z5GD01us=", title: "Rest", direction: "horizontal", extraTiles: ["ش","ک"] },
+  { id: nanoid(), word: "بهار", image: "https://as2.ftcdn.net/jpg/02/56/61/45/1000_F_256614501_8ng35vnx4tr5MvH564fLZRrSynSeyP7w.jpg", title: "Spring", direction: "horizontal", extraTiles: ["ص","ن"] },
+  { id: nanoid(), word: "شاد", image: "https://c8.alamy.com/comp/G39KKD/vector-illustration-of-happy-man-cartoon-G39KKD.jpg", title: "Happy", direction: "horizontal", extraTiles: ["چ","ل"] },
+],
+
+
 };
 
 export default function SpellingGame() {
