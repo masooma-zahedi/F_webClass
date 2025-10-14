@@ -45,8 +45,8 @@ const collections = {
   { id: nanoid(), word: "خوراکی", image: "https://png.pngtree.com/png-clipart/20250111/original/pngtree-snacks-png-image_19912509.png", title: "Snack / Food", direction: "horizontal", extraTiles: ["ف","ش","ت"] },
 ],
 "پاییز_و_خارپشت": [
+  { id: nanoid(), word: "برگ", image: "https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-cute-fall-leaves-clipart-various-autumn-leaves-set-cartoon-vector-png-image_6867180.png", title: "Leaf", direction: "horizontal", extraTiles: ["ش","پ"] },
   { id: nanoid(), word: "خارپشت", image: "https://thumbs.dreamstime.com/b/cute-animated-hedgehog-illustration-cartoon-style-design-hedgehog-cute-animated-hedgehog-illustration-cartoon-363412797.jpg", title: "Hedgehog", direction: "horizontal", extraTiles: ["س","م"] },
-  { id: nanoid(), word: "برگ‌", image: "https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-cute-fall-leaves-clipart-various-autumn-leaves-set-cartoon-vector-png-image_6867180.png", title: "Leaf", direction: "horizontal", extraTiles: ["ت","پ"] },
   { id: nanoid(), word: "درخت", image: "https://i.pinimg.com/736x/fe/fe/44/fefe4472da490edabdf71bd471352f15.jpg", title: "Tree", direction: "horizontal", extraTiles: ["ف","گ"] },
   { id: nanoid(), word: "پاییز", image: "https://t4.ftcdn.net/jpg/11/49/68/49/360_F_1149684918_BajC4EcED7p8GH45HN4pOLcHxURgW8mj.jpg", title: "Autumn / Fall", direction: "horizontal", extraTiles: ["ش","ر"] },
   { id: nanoid(), word: "زمین", image: "https://img.freepik.com/free-vector/low-point-view-nature-landscape_1308-92523.jpg?semt=ais_hybrid&w=740&q=80", title: "Ground / Earth", direction: "horizontal", extraTiles: ["چ","د"] },
@@ -54,6 +54,7 @@ const collections = {
   { id: nanoid(), word: "استراحت", image: "https://media.istockphoto.com/id/933020166/vector/cute-cartoon-boy-sleep-in-bed-good-dream-rest-character-vector-illustration.jpg?s=170667a&w=0&k=20&c=CV5uGI7uD7HDJWcPSDuhhRoxU08e9yhBP9_z5GD01us=", title: "Rest", direction: "horizontal", extraTiles: ["ش","ک"] },
   { id: nanoid(), word: "بهار", image: "https://as2.ftcdn.net/jpg/02/56/61/45/1000_F_256614501_8ng35vnx4tr5MvH564fLZRrSynSeyP7w.jpg", title: "Spring", direction: "horizontal", extraTiles: ["ص","ن"] },
   { id: nanoid(), word: "شاد", image: "https://c8.alamy.com/comp/G39KKD/vector-illustration-of-happy-man-cartoon-G39KKD.jpg", title: "Happy", direction: "horizontal", extraTiles: ["چ","ل"] },
+  { id: nanoid(), word: "غمگین", image: "https://cdn.pixabay.com/photo/2025/07/01/17/42/ai-generated-9691043_1280.png", title: "ُSad", direction: "horizontal", extraTiles: ["ه","ص"] },
 ],
 
 

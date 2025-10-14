@@ -99,12 +99,22 @@ const schoolSupplies = [
   { id: 8, word: "پاک‌کن", image: "https://thumbs.dreamstime.com/z/cartoon-happy-eraser-illustration-53892555.jpg" },
   { id: 9, word: "کیف", image: "https://t4.ftcdn.net/jpg/15/14/49/97/360_F_1514499759_4ws45WRpsZvVJvGmbCP5iE5jNXoYgrbj.jpg" },
   { id: 10, word: "مداد", image: "https://i.etsystatic.com/40533556/r/il/b58af9/6112668721/il_1080xN.6112668721_qfn0.jpg" },
-  // { id: 11, word: "کتاب", image: "https://previews.123rf.com/images/dualororua/dualororua1707/dualororua170700423/83227038-vector-illustration-of-book-cartoon-on-pile-book.jpg" },
-  // { id: 12, word: "جامدادی", image: "https://previews.123rf.com/images/clairev/clairev1807/clairev180700082/114771248-pencil-case-theme-image-2-eps10-vector-illustration.jpg" },
-  // { id: 13, word: "دفتر", image: "https://charatoon.com/photo/3626.png" },
-  // { id: 14, word: "میز", image: "https://www.shutterstock.com/image-vector/school-desk-chair-260nw-613913594.jpg" },
-  // { id: 15, word: "تراش", image: "https://thumbs.dreamstime.com/b/pencil-sharpener-15057545.jpg" }
 ];
+
+// برای داستان پاییز و خارپشت
+const paeezVaKharposht = [
+  { id: 1, word: "برگ", image: "https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-cute-fall-leaves-clipart-various-autumn-leaves-set-cartoon-vector-png-image_6867180.png" },
+  { id: 2, word: "خارپشت", image: "https://thumbs.dreamstime.com/b/cute-animated-hedgehog-illustration-cartoon-style-design-hedgehog-cute-animated-hedgehog-illustration-cartoon-363412797.jpg" },
+  { id: 3, word: "درخت", image: "https://i.pinimg.com/736x/fe/fe/44/fefe4472da490edabdf71bd471352f15.jpg" },
+  { id: 4, word: "پاییز", image: "https://t4.ftcdn.net/jpg/11/49/68/49/360_F_1149684918_BajC4EcED7p8GH45HN4pOLcHxURgW8mj.jpg" },
+  { id: 5, word: "زمین", image: "https://img.freepik.com/free-vector/low-point-view-nature-landscape_1308-92523.jpg?semt=ais_hybrid&w=740&q=80" },
+  { id: 6, word: "رنگی", image: "https://png.pngtree.com/thumb_back/fh260/background/20240104/pngtree-vibrant-cartoon-texture-a-playful-and-colorful-background-image_13880204.png" },
+  { id: 7, word: "استراحت", image: "https://media.istockphoto.com/id/933020166/vector/cute-cartoon-boy-sleep-in-bed-good-dream-rest-character-vector-illustration.jpg?s=170667a&w=0&k=20&c=CV5uGI7uD7HDJWcPSDuhhRoxU08e9yhBP9_z5GD01us=" },
+  { id: 8, word: "بهار", image: "https://as2.ftcdn.net/jpg/02/56/61/45/1000_F_256614501_8ng35vnx4tr5MvH564fLZRrSynSeyP7w.jpg" },
+  { id: 9, word: "شاد", image: "https://c8.alamy.com/comp/G39KKD/vector-illustration-of-happy-man-cartoon-G39KKD.jpg" },
+  { id: 10, word: "غمگین", image: "https://cdn.pixabay.com/photo/2025/07/01/17/42/ai-generated-9691043_1280.png" },
+];
+
 
 
 
@@ -258,6 +268,7 @@ const MatchGame = () => {
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(diningTableItems,'item6')}>میز غذاخوری</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(bathItems ,'item7')}>وسایل حمام</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(schoolSupplies ,'item8')}>وسایل مدرسه</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(paeezVaKharposht ,'item9')}>پاییز و خارپشت</button>
                   </div>
                 </div>
                 <div class="modal-footer">
