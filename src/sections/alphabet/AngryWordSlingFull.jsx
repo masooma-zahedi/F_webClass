@@ -20,13 +20,17 @@ export default function AngryWordSlingFull({ initialWords }) {
   // const defaultWords = ["مِهمانی","شاد","بادکُنَک","چِراغ","رَنگی","دوست","بازی","کِیک","شُکُلاتی","آب‌میوِه","خُوشحال","لَذَت","تَشَكُر"]
 
   // داستان من و ماکارانی
-  const defaultWords = ['قابلَمه','بویِ','بابا','خوشمَزه','کُمَک','آفَرین','هَمِه','خَندیدیم','خوردیم']
+  // const defaultWords = ['قابلَمه','بویِ','بابا','خوشمَزه','کُمَک','آفَرین','هَمِه','خَندیدیم','خوردیم']
 
   // داستان طوفان بزرگ
 //   const defaultWords = ['آسمان','باد','بَرق','مادَر','طوفان','شَمع','صُبح','دِرَخت','بابا','کُمَک','هَمسایه','زُبالِه','هَمدِلی'];
 
   // داستان پدر و سبد
   // const defaultWords = ['پِدَر','چای','سارا','سَبَد','سِیب','شاد','خُورد','خُوشحال'];
+
+  //حرف ل
+  const defaultWords= ["طَلا","لاک","بالا","لیز","قالی","کالا","سالو","لولا","لوک","پِلاک","پولاد","کِلاس","لِباس","بُلور","لوکس","زُلال","جَلال","زِلزِلِه","بالارو","دِلاوَر","لاک پُشت","سالاد",]
+
 
 
 
@@ -438,11 +442,11 @@ function drawBackground() {
         <canvas ref={canvasRef} width={WIDTH} height={HEIGHT} style={{ width: "100%", display: "block", background: "#eaf6ff" }} />
         {showWord && (
           <div style={wordOverlayStyle}>
-            <div style={wordCardStyle}>
-              <div style={{ fontSize: 48, textAlign: "center", lineHeight: 1.2 }}>{words[wordIndex]}</div>
+            <div className="bg-info" style={wordCardStyle}>
+              <div className="text-danger" style={{ fontSize: 48, textAlign: "center", lineHeight: 1.2 }}>{words[wordIndex]}</div>
               <div style={{ display: "flex", gap: 8, justifyContent: "center", marginTop: 12 }}>
-                <button onClick={() => speakFa(words[wordIndex])} style={btnStyle}>🔊 پخش دوباره</button>
-                <button onClick={nextWordRound} style={btnStyle}>کلمه بعدی ▶</button>
+                {/* <button onClick={() => speakFa(words[wordIndex])} style={btnStyle}>🔊 پخش دوباره</button> */}
+                <button className="mt-5 bg-success text-light" onClick={nextWordRound} style={btnStyle}>کلمه بعدی ▶</button>
               </div>
             </div>
           </div>

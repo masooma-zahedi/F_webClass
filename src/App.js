@@ -22,6 +22,7 @@ import GameRoom from "./sections/alphabet/GameRoom";
 import TableWords from "./sections/alphabet/TableWords";
 import SunWordsWords from "./sections/word/SunWordsWord";
 import TodayPlan from "./pages/TodayPlan";
+import SortableSentencesApp from "./sections/word/SortableSentencesApp";
 
 
 export default function App() {
@@ -84,7 +85,7 @@ export default function App() {
                   { label: "کامل کردن جمله", path: "dragDropQuiz" },
                   { label: "تایپ جمله", path: "typingQAImageSlider" },
                   { label: "داستان", path: "./story/storyPage3" },
-                  // { label: "زبان", path: "language" }
+                  { label: "مرتب کردن جملات", path: "sortableSentencesApp" }
                 ]}
               />
             }
@@ -97,7 +98,7 @@ export default function App() {
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
             <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />
             <Route path="story/StoryPage3" element={<StoryPage3 groupKey='kalemat' />} />
-            {/* <Route path="language" element={<Language />} /> */}
+            <Route path="sortableSentencesApp" element={<SortableSentencesApp />} />
           </Route>
 
           {/************************************************** * story pages*********************** */}
