@@ -63,7 +63,67 @@ const questions1 = [
         options: ['کَفش', 'گُربه', 'گُل','موبایل'],
         image: 'https://cdn.fararu.com/thumbnail/OTliY2YXgLxy/fCohl8MdDeqLuUiNxwx9X4gYrgKL9XBZBWdbZWUJQbHweEbOeibJ3lKhwCXPcymMenByfMSSpsbh46ioIqLjxbHMRm21_h7HQpcPeRTlTup9Fg2BIMEOf3jclM_4J6zeNSYMgfXaohvvVGVyDx5LlALVa--jwrBG/OTliY2YXgLxy.jpg'
       },
-    ]
+      {
+    sentence: 'مَن با ___ می‌نویسَم.',
+    correctWord: 'خودکار',
+    options: ['چاقو', 'خودکار', 'کاسه'],
+    image: 'https://png.pngtree.com/png-clipart/20220110/original/pngtree-child-writing-png-image_7067306.png'
+  },
+  {
+    sentence: 'مادَر ___ را دَر یَخچال گُذاشت.',
+    correctWord: 'شیر',
+    options: ['کتاب', 'شیر','کفش'],
+    image: 'https://thumbs.dreamstime.com/b/woman-red-striped-shirt-holding-milk-carton-open-refrigerator-vector-illustration-wearing-takes-kitchen-setting-399222992.jpg'
+  },
+  {
+    sentence: 'بَچّه‌ها در ___ بازی می‌کُنَند.',
+    correctWord: 'پارک',
+    options: ['پارک', 'مدرسه', 'آشپزخانه'],
+    image: 'https://thumbs.dreamstime.com/b/kids-play-park-playground-vector-illustration-children-swing-outdoor-summer-school-kindergarten-city-landscape-kids-play-park-137126419.jpg'
+  },
+  {
+    sentence: 'دَر آسمان ___ می‌تابَد.',
+    correctWord: 'خورشید',
+    options: [ 'ماهی', 'دَره','خورشید',],
+    image: 'https://img.freepik.com/premium-photo/cartoon-illustration-bright-sun-shining-blue-sky-with-puffy-white-clouds_14117-1194529.jpg'
+  },
+  {
+    sentence: 'پِسَر بایک ___ بازی می‌کُنَد.',
+    correctWord: 'توپ',
+    options: ['توپ', 'نان', 'میز'],
+    image: 'https://static.vecteezy.com/system/resources/previews/039/657/376/non_2x/ai-generated-child-playing-ball-free-png.png'
+  },
+  {
+    sentence: 'ما در ___ خوابیدیم.',
+    correctWord: 'چادُر',
+    options: [ 'کتابخانه','چادُر', 'ماشین'],
+    image: 'https://img.freepik.com/premium-photo/cartoon-illustration-family-camping-with-tent-campfire-mountains-background_14117-1073676.jpg'
+  },
+  {
+    sentence: 'پِدَر با ___ کار می‌کُنَد.',
+    correctWord: 'کِشتی',
+    options: [ 'پرنده', 'دوچرخه','کِشتی',],
+    image: 'https://www.shutterstock.com/image-vector/fishing-boat-flat-vector-illustration-260nw-1470908513.jpg'
+  },
+  {
+    sentence: '___ سَبز است و در باغ می‌روید.',
+    correctWord: 'درَخت',
+    options: ['درَخت', 'میز', 'کِتاب'],
+    image: 'https://i.pinimg.com/736x/f0/51/49/f05149383b0a087c378b2860d2b13413.jpg'
+  },
+  {
+    sentence: 'مَن با ___ غذا می‌خورَم.',
+    correctWord: 'قاشق',
+    options: [ 'مداد', 'کفش','قاشق'],
+    image: 'https://thumbs.dreamstime.com/b/little-boy-spoon-fork-sitting-table-315675805.jpg'
+  },
+  {
+    sentence: 'ما دَر ___ زندگی می‌کُنیم.',
+    correctWord: 'خانه',
+    options: [ 'مدرسه','خانه', 'دریا'],
+    image: 'https://img.freepik.com/free-vector/family-living-home_1308-25009.jpg'
+  }
+]
 const questions2 = [
     // masooma
       {
@@ -270,24 +330,23 @@ const questions3 = [
   }
 ];
 
+
+// توجه: فرض شده questions1, questions2, questions3 در همین فایل یا در بالاتر وارد شده‌اند.
+// اگر در جای دیگری هستند، آنها را ایمپورت کنید یا به صورت props ارسال کنید.
+
 const DragDropQuiz = () => {
-  const [questions,setQuestions] = useState(questions1)
-  const[idModal,setIdModal]=useState('question1')
+  const [questions, setQuestions] = useState(questions1);
+  const [idModal, setIdModal] = useState("question1");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [droppedWord, setDroppedWord] = useState(null);
+  const [droppedWord, setDroppedWord] = useState(null); // در این نسخه "کلمهٔ انتخاب‌شده"
   const [isCorrect, setIsCorrect] = useState(null);
 
   const currentQuestion = questions[currentIndex];
 
-  const onDrop = (e) => {
-    e.preventDefault();
-    const word = e.dataTransfer.getData('text/plain');
+  // در این نسخه دیگر درگ/دراپ نداریم؛ با کلیک روی یک گزینه، آن کلمه در جای خالی قرار می‌گیرد
+  const placeWord = (word) => {
     setDroppedWord(word);
     setIsCorrect(null);
-  };
-
-  const onDragStart = (e, word) => {
-    e.dataTransfer.setData('text/plain', word); 
   };
 
   const checkAnswer = () => {
@@ -295,7 +354,7 @@ const DragDropQuiz = () => {
   };
 
   const nextQuestion = () => {
-    setCurrentIndex(prev => prev + 1);
+    setCurrentIndex((prev) => prev + 1);
     setDroppedWord(null);
     setIsCorrect(null);
   };
@@ -312,178 +371,186 @@ const DragDropQuiz = () => {
   };
 
   const getSentenceWithBlank = () => {
-    const parts = currentQuestion.sentence.split('___');
+    const parts = currentQuestion.sentence.split("___");
     return (
       <>
         {parts[0]}
         <span
-          onDrop={onDrop}
-          onDragOver={(e) => e.preventDefault()}
           className="d-inline-block border border-primary rounded px-3 py-1 mx-2"
-          style={{ minWidth: '60px', minHeight: '30px', backgroundColor: '#f0f8ff' }}
+          style={{ minWidth: "60px", minHeight: "30px", backgroundColor: "#f0f8ff", cursor: 'pointer' }}
+          // با کلیک روی جای خالی هم می‌توان آن را پاک کرد
+          onClick={() => setDroppedWord(null)}
+          title="برای پاک کردن پاسخ اینجا کلیک کنید"
         >
-          {droppedWord || '___'}
+          {droppedWord || "___"}
         </span>
         {parts[1]}
       </>
     );
   };
-  const stylebg = {
-    backgroundColor:'rgba(232, 231, 231, 0.99)'
-  }
-const questionsqq = (e, i) => {
-  setQuestions(e);
-  setIdModal(i);
-  setCurrentIndex(0);     // ریست کردن به سوال اول
-  setDroppedWord(null);
-  setIsCorrect(null);
-};
 
-const prevQuestion = () => {
-  if (currentIndex > 0) {
-    setCurrentIndex(prev => prev - 1);
+  const stylebg = {
+    backgroundColor: "rgba(232, 231, 231, 0.99)",
+  };
+
+  const questionsqq = (e, i) => {
+    setQuestions(e);
+    setIdModal(i);
+    setCurrentIndex(0); // ریست کردن به سوال اول
     setDroppedWord(null);
     setIsCorrect(null);
-  }
-};
+  };
 
+  const prevQuestion = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+      setDroppedWord(null);
+      setIsCorrect(null);
+    }
+  };
 
   return (
-        <div className="test  " dir="rtl" style={{fontFamily:'Vazir,sans-serif'}}>
+    <div className="test" dir="rtl" style={{ fontFamily: "Vazir,sans-serif" }}>
+      <div
+        className="container border border-danger my-5 p-4 border rounded shadow bg-light text-end direction-rtl"
+        style={{ fontFamily: "Vazir", background:"linear-gradient(135deg, #cdf7a6c7, #f8ea8fc4)" }}
+      >
+        {/*Start modal for titles */}
+        <div className="border border-success p-3">
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={'#' + idModal}>
+            فهرست
+          </button>
 
-    <div className="container border border-danger my-5 p-4 border rounded shadow bg-light text-end direction-rtl" style={{ fontFamily: 'Vazir' }}>
-      {/*Start modal for titles */}
-      <div className="border border-success p-3">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target={'#'+idModal}>
-          فهرست
-        </button>
-
-        <div class="modal fade" id={idModal} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <h1 class="modal-title fs-5" id="exampleModalLabel" > فهرست مطالب  </h1>
-              </div>
-              <div className="modal-body">
-                <div className='d-flex flex-wrap'>
-                  <button className='btn  shadow-sm border  mx-2' style={stylebg} onClick={()=>questionsqq(questions1,'question1')}>مرحله 1</button>
-                  <button className='btn shadow-sm border  mx-2' style={stylebg} onClick={()=>questionsqq(questions2,'question2')}>مرحله 2</button>
-                  <button className='btn shadow-sm border mx-2' style={stylebg} onClick={()=>questionsqq(questions3,'question3')}>مرحله 3</button>
+          <div className="modal fade" id={idModal} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">
+                    {' '}
+                    فهرست مطالب{' '}
+                  </h1>
+                </div>
+                <div className="modal-body">
+                  <div className="d-flex flex-wrap">
+                    <button className="btn  shadow-sm border  mx-2" style={stylebg} onClick={() => questionsqq(questions1, 'question1')}>
+                      مرحله 1
+                    </button>
+                    <button className="btn shadow-sm border  mx-2" style={stylebg} onClick={() => questionsqq(questions2, 'question2')}>
+                      مرحله 2
+                    </button>
+                    <button className="btn shadow-sm border mx-2" style={stylebg} onClick={() => questionsqq(questions3, 'question3')}>
+                      مرحله 3
+                    </button>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-success" data-bs-dismiss="modal">
+                    Close
+                  </button>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+        {/* End modal for titles */}
+
+        <div className="text-center my-3">
+          <span className="badge bg-info fs-6">سوال {currentIndex + 1} از {questions.length}</span>
+        </div>
+
+        <div className="d-flex justify-content-between align-items-center m-5">
+          <h4>جمله را کامل کن:</h4>
+          <button className="btn btn-outline-danger btn-sm" onClick={resetGame}>
+            شروع دوباره 🔁
+          </button>
+        </div>
+
+        <div className="row align-items-center mb-4">
+          {currentQuestion.image ? (
+            <>
+              <div className="col-md-4 text-center mb-3 mb-md-0">
+                <img src={currentQuestion.image} alt="تصویر مربوط به سوال" className="img-fluid rounded" style={{ maxHeight: '200px' }} />
+              </div>
+              <div className="col-md-8">
+                <p className="fs-2 ">{getSentenceWithBlank()}</p>
+                <div className="mt-4 mb-3 ">
+                  {currentQuestion.options.map((word, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => placeWord(word)}
+                      className="btn btn-outline-secondary mx-2 mb-2"
+                      style={{ cursor: 'pointer' }}
+                      aria-pressed={droppedWord === word}
+                    >
+                      {word}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="col-12">
+              <p className="fs-5">{getSentenceWithBlank()}</p>
+              <div className="mt-4 mb-3 ">
+                {currentQuestion.options.map((word, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => placeWord(word)}
+                    className="btn btn-outline-secondary mx-2 mb-2"
+                    style={{ cursor: 'pointer' }}
+                    aria-pressed={droppedWord === word}
+                  >
+                    {word}
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      {/* End modal for titles */}
-
-      {/* *** */}
-      <div className="text-center my-3">
-        <span className="badge bg-info fs-6">
-          سوال {currentIndex + 1} از {questions.length}
-        </span>
-      </div>
-
-      
-      <div className="d-flex justify-content-between align-items-center m-5" >
-        <h4>جمله را کامل کن:</h4>
-        <button className="btn btn-outline-danger btn-sm" onClick={resetGame}>
-          شروع دوباره 🔁
-        </button>
-      </div>
-
-      <div className="row align-items-center mb-4">
-        {currentQuestion.image ? (
-          <>
-            <div className="col-md-4 text-center mb-3 mb-md-0">
-              <img
-                src={currentQuestion.image}
-                alt="تصویر مربوط به سوال"
-                className="img-fluid rounded"
-                style={{ maxHeight: '200px' }}
-              />
-            </div>
-            <div className="col-md-8">
-              <p className="fs-2 ">{getSentenceWithBlank()}</p>
-              <div className="mt-4 mb-3 ">
-        {currentQuestion.options.map((word, idx) => (
-          <span
-            key={idx}
-            draggable
-            onDragStart={(e) => onDragStart(e, word)}
-            className="badge bg-secondary mx-2 p-2 fs-5"
-            style={{ cursor: 'grab' }}
-          >
-            {word}
-          </span>
-        ))}
-      </div>
-            </div>
-          </>
-        ) : (
-          <div className="col-12">
-            <p className="fs-5">{getSentenceWithBlank()}</p>
-            <div className="mt-4 mb-3 ">
-        {currentQuestion.options.map((word, idx) => (
-          <span
-            key={idx}
-            draggable
-            onDragStart={(e) => onDragStart(e, word)}
-            className="badge bg-secondary mx-2 p-2 fs-6"
-            style={{ cursor: 'grab' }}
-          >
-            {word}
-          </span>
-        ))}
-      </div>
-          </div>
-        )}
-      </div>
-
-      <div className="d-flex gap-2 flex-wrap flex-row-reverse mx-4">
-  <button className="btn btn-success" onClick={checkAnswer} disabled={!droppedWord}>
-    بررسی پاسخ ✅
-  </button>
-
-  <button className="btn btn-warning" onClick={resetCurrentQuestion}>
-    پاک کردن پاسخ 🔄
-  </button>
-
-  {currentIndex > 0 && (
-    <button className="btn btn-outline-secondary" onClick={prevQuestion}>
-      سوال قبلی ⬅️
-    </button>
-  )}
-
-  {isCorrect && currentIndex < questions.length - 1 && (
-    <button className="btn btn-primary" onClick={nextQuestion}>
-      سوال بعدی ➡️
-    </button>
-  )}
-</div>
-
-      {isCorrect !== null && (
-        <div className="mt-3">
-          {isCorrect ? (
-            <div className="alert alert-success">آفرین! پاسخ درست است. 🎉</div>
-          ) : (
-            <div className="alert alert-danger">پاسخ اشتباه است. دوباره امتحان کن. ❌</div>
           )}
         </div>
-      )}
 
-      {isCorrect && currentIndex === questions.length - 1 && (
-        <div className="alert alert-info mt-4">👏 تمام سوال‌ها تمام شد!</div>
-      )}
-      <br /><br />
-      <div className="text-muted">DragDropQuiz</div>
-    </div>
+        <div className="d-flex gap-2 flex-wrap flex-row-reverse mx-4">
+          <button className="btn btn-success" onClick={checkAnswer} disabled={!droppedWord}>
+            بررسی پاسخ ✅
+          </button>
+
+          <button className="btn btn-warning" onClick={resetCurrentQuestion}>
+            پاک کردن پاسخ 🔄
+          </button>
+
+          {currentIndex > 0 && (
+            <button className="btn btn-outline-secondary" onClick={prevQuestion}>
+              سوال قبلی ⬅️
+            </button>
+          )}
+
+          {isCorrect && currentIndex < questions.length - 1 && (
+            <button className="btn btn-primary" onClick={nextQuestion}>
+              سوال بعدی ➡️
+            </button>
+          )}
+        </div>
+
+        {isCorrect !== null && (
+          <div className="mt-3">
+            {isCorrect ? (
+              <div className="alert alert-success">آفرین! پاسخ درست است. 🎉</div>
+            ) : (
+              <div className="alert alert-danger">پاسخ اشتباه است. دوباره امتحان کن. ❌</div>
+            )}
+          </div>
+        )}
+
+        {isCorrect && currentIndex === questions.length - 1 && (
+          <div className="alert alert-info mt-4">👏 تمام سوال‌ها تمام شد!</div>
+        )}
+        <br />
+        <br />
+        <div className="text-muted">DragDropQuiz (click-to-place)</div>
+      </div>
     </div>
   );
 };
 
 export default DragDropQuiz;
+
