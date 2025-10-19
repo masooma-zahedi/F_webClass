@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom"; 
 import SunWords from './sunWords';
 import BrokenGlass from './BrokenGlass';
+import WordFlipBox from './WordFlipBox';
 // import AnotherComponent from './AnotherComponent';
 
 
@@ -12,7 +13,7 @@ import BrokenGlass from './BrokenGlass';
 
 
 export default function TableWords() {
-    const [menuItems,setMenuItems] = useState([{ label: "کلمات آفتابگردان", path: "sunWords" },{ label: "جعبه شیشه ای ", path: "brokenGlass" },])
+    const [menuItems,setMenuItems] = useState([{ label: "کلمات آفتابگردان", path: "sunWords" },{ label: "جعبه شیشه ای ", path: "brokenGlass" },{ label:"چرخش کلمات",path:"wordFlipBox"}])
     const [basePath,setBasePath] = useState ('TableWords')
   return (
     <>
@@ -36,6 +37,7 @@ export default function TableWords() {
         <Route index element={<SunWords />} />
         <Route path="sunWords" element={<SunWords />} />
         <Route path="brokenGlass" element={<BrokenGlass />} />
+        <Route path="wordFlipBox" element={<WordFlipBox />} />
     </Routes>
     </>
   );
