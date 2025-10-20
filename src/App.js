@@ -23,6 +23,7 @@ import TableWords from "./sections/alphabet/TableWords";
 import SunWordsWords from "./sections/word/SunWordsWord";
 import TodayPlan from "./pages/TodayPlan";
 import SortableSentencesApp from "./sections/word/SortableSentencesApp";
+import BiographySlide from "./layouts/BiographySlide";
 
 
 export default function App() {
@@ -116,7 +117,8 @@ export default function App() {
             {/* <Route path="typingQAImageSlider" element={<TypingQAImageSlider />} />  */}
             <Route path="" element={<StoryPage3 groupKey='dastan' />} />
           </Route>
-
+          
+          <Route path="/biographySlide" element={<BiographySlide />} />
           <Route path="/todayPlan" element={<TodayPlan />} />
 
         </Route>

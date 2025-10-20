@@ -69,7 +69,7 @@ export default function MainLayout() {
               <li><Link className="text-white" to={'/alphabet'} >Alphabet</Link></li>
               <li><Link className="text-white" to={'/word'} >Word</Link></li>
               <li><Link className="text-white" to={'/story'} >Story</Link></li>
-              <li><Link className="text-white" to={'/'} >Contact</Link></li>
+              <li><Link className="text-white" to={'/biographySlide'} >Contact</Link></li>
             </ul>
           </div>
           <div className="col-md-4">
