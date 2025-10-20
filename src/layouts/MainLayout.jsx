@@ -40,6 +40,9 @@ export default function MainLayout() {
                 <Link className="nav-link" to="/Story" onClick={() => setIsOpen(false)}>Story</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/biographySlide" onClick={() => setIsOpen(false)}>Contact</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/todayPlan" onClick={() => setIsOpen(false)}>TodayPlan</Link>
               </li>
             </ul>
