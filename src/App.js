@@ -138,21 +138,3 @@ export default function App() {
 
 
 
-          {/* بخش آموزش */}
-          {/* <Route
-            path="word"
-            element={
-              <SectionLayout
-                basePath="/word"
-                menuItems={[
-                  { label: "صفحه اصلی", path: "" },
-                  { label: "ریاضیات", path: "math" },
-                  { label: "زبان", path: "language" }
-                ]}
-              />
-            }
-          >
-            <Route index element={<EducationHome />} />
-            <Route path="math" element={<Math />} />
-            <Route path="language" element={<Language />} />
-          </Route> */}

@@ -125,7 +125,7 @@ const LearnNewWords = () => {
 
      // ********** شغل‌ها
   { id: nanoid(), image: 'https://t3.ftcdn.net/jpg/05/22/64/54/360_F_522645436_Fby552W2jVPQGLunxN8pIUOaHg9pMrAV.jpg', englishWord: 'Teacher', persianWord: 'مُعَلِّم', category: 'شغل‌ها' },
-  { id: nanoid(), image: 'https://png.pngtree.com/png-clipart/20240702/original/pngtree-friendly-cartoon-doctor-png-image_15467257.png', englishWord: 'Doctor', persianWord: 'دَکتَر', category: 'شغل‌ها' },
+  { id: nanoid(), image: 'https://png.pngtree.com/png-clipart/20240702/original/pngtree-friendly-cartoon-doctor-png-image_15467257.png', englishWord: 'Doctor', persianWord: 'دُکتُر', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://png.pngtree.com/png-vector/20250106/ourmid/pngtree-cartoon-nurse-girl-holding-stethoscope-notepad-and-pen-png-image_15070570.png', englishWord: 'Nurse', persianWord: 'پَرَستار', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://www.shutterstock.com/image-vector/cartoon-kid-police-character-vector-600nw-2427800671.jpg', englishWord: 'Police officer', persianWord: 'پُلیس', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://c8.alamy.com/comp/2PKXWEP/firefighter-cartoon-colored-clipart-illustration-2PKXWEP.jpg', englishWord: 'Firefighter', persianWord: 'آتَش‌نِشان', category: 'شغل‌ها' },
@@ -138,7 +138,7 @@ const LearnNewWords = () => {
   { id: nanoid(), image: 'https://t4.ftcdn.net/jpg/00/59/66/83/360_F_59668328_FiEHupJ2wrcOBGc6ALr7jb58Iw8zOAlU.jpg', englishWord: 'Artist', persianWord: 'هُنَرمَند', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://t3.ftcdn.net/jpg/04/74/21/78/360_F_474217849_dCCwltxzeTNDLZjYjaGr4pAWdh0xYVL9.jpg', englishWord: 'Musician', persianWord: 'موسیقی دان', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://static.vecteezy.com/system/resources/thumbnails/007/179/113/small_2x/doctor-dentist-cartoon-checking-boy-teeth-free-vector.jpg', englishWord: 'Dentist', persianWord: 'دَندان‌پِزِشک', category: 'شغل‌ها' },
-  { id: nanoid(), image: 'https://cdn.pixabay.com/photo/2025/01/11/05/12/ai-generated-9325250_1280.png', englishWord: 'Soldier', persianWord: 'سِرباز', category: 'شغل‌ها' },
+  { id: nanoid(), image: 'https://cdn.pixabay.com/photo/2025/01/11/05/12/ai-generated-9325250_1280.png', englishWord: 'Soldier', persianWord: 'سَرباز', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://png.pngtree.com/png-clipart/20241002/original/pngtree-smiling-scientist-conducting-experiment-in-lab-clipart-illustration-png-image_16157647.png', englishWord: 'Scientist', persianWord: 'دانِشمَند', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://image.shutterstock.com/image-vector/seamstress-work-tailoring-vector-illustration-260nw-2485708901.jpg', englishWord: 'Tailor', persianWord: 'خَیّاط', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://img.freepik.com/free-vector/simple-sketch-waiter_1308-84157.jpg?semt=ais_hybrid&w=740&q=80', englishWord: 'Waiter', persianWord: 'گارسون', category: 'شغل‌ها' },
