@@ -1628,7 +1628,7 @@ export const SylabeWords = () => {
         ]
     },
     {
-      id: nanoid(),
+      id: 9,
       titleHead: "کلاس G",
       titleColor: "rgba(58, 210, 111, 1)",
       sylabelBg: "rgba(36, 190, 190, 1)",

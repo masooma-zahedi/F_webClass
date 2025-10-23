@@ -26,10 +26,7 @@ document.head.appendChild(style);
 ];
 
 
-
-const LearnNewWords = () => {
-
-  const [cards] = useState([
+export  const cards = [
     // ********** اعضای بدن
     { id: nanoid(), image: 'https://static.vecteezy.com/system/resources/thumbnails/053/472/166/small/a-cartoon-hand-reaching-out-to-someone-vector.jpg', englishWord: 'Hand', persianWord: 'دَست', category: 'اعضای بدن' },
     { id: nanoid(), image: 'https://img.freepik.com/free-vector/hand-drawn-foot-cartoon-illustration_23-2151063042.jpg', englishWord: 'Leg', persianWord: 'پا', category: 'اعضای بدن' },
@@ -143,8 +140,12 @@ const LearnNewWords = () => {
   { id: nanoid(), image: 'https://image.shutterstock.com/image-vector/seamstress-work-tailoring-vector-illustration-260nw-2485708901.jpg', englishWord: 'Tailor', persianWord: 'خَیّاط', category: 'شغل‌ها' },
   { id: nanoid(), image: 'https://img.freepik.com/free-vector/simple-sketch-waiter_1308-84157.jpg?semt=ais_hybrid&w=740&q=80', englishWord: 'Waiter', persianWord: 'گارسون', category: 'شغل‌ها' },
 
-  ]);
-  
+  ];
+
+
+
+
+const LearnNewWords = () => {
 
   const categories = [...new Set(cards.map(card => card.category))]; // استخراج دسته‌ها
   const [selectedCategory, setSelectedCategory] = useState(categories[0]); // دسته پیش‌فرض
@@ -255,3 +256,5 @@ const LearnNewWords = () => {
 };
 
 export default LearnNewWords;
+
+

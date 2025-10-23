@@ -1,33 +1,93 @@
 import { nanoid } from "nanoid";
 import React, {useEffect, useState } from "react";
+import { database, ref, set, onValue, remove } from '.././firebase';
+import {cards} from "./LearnNewWords";
+
+
+
+// for firebase
+const useWords = () => {
+  const [words, setWords] = useState([]);
+  const [loading, setLoading] = useState(true);
+// get data from firebase
+  useEffect(() => {
+    const wordsRef = ref(database, "words");
+
+    const unsubscribe = onValue(wordsRef, (snapshot) => {
+      const val = snapshot.val();
+      if (val) {
+        const arr = Object.entries(val).map(([id, data]) => ({ id, ...data }));
+        setWords(arr);
+      } else {
+        setWords([]);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return { words, loading };
+};
+
+
 
 // اگر WordCardsSingle نسخهٔ فعلی‌ت رو داری، آن را ایمپورت کن.
 // در این مثال فرض می‌کنیم WordCardsSingle یک prop به نام `initialWords` می‌پذیرد.
 // اگر کامپوننت فعلی‌ات از آرایهٔ داخلی استفاده می‌کند، لازم است آن را طوری تغییر دهی
 // که از prop استفاده کند (نمونه‌ای پایین می‌دهم).
 
-const collections = {
-  "میوه‌ها": [
-    { id: nanoid(), word: "سیب", image: "https://media.istockphoto.com/id/686309840/vector/sticker-red-apple-with-stem.jpg?s=612x612&w=0&k=20&c=4QPpObM-Ya-FtLxi3VPeQ-LTno8c0KgWrJknfLNhEro=", title: "Apple", direction: "horizontal", extraTiles: ["گ"] },
-    { id: nanoid(), word: "عسل", image: "https://img.freepik.com/free-vector/cute-honey-bee-hug-honeycomb-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_138676-6880.jpg?semt=ais_hybrid&w=740&q=80", title: "Honey", direction: "horizontal", extraTiles: ["ک","پ"] },
-  ],
-  "وسایل مدرسه": [
-    { id: nanoid(), word: "قیچی", image: "https://charatoon.com/photo/10081.png", title: "Scissors", direction: "horizontal", extraTiles: ["ل","م"] },
-    { id: nanoid(), word: "خط کش", image: "https://i.pinimg.com/736x/07/04/cd/0704cda084fddf29a8d40a447977d422.jpg", title: "Ruler", direction: "horizontal", extraTiles: ["ف","س","ا"] },
-    { id: nanoid(), word: "صندلی", image: "https://thumbs.dreamstime.com/b/d-rendering-school-chair-isolated-white-background-ideal-education-classroom-furniture-related-themes-cartoon-366915616.jpg", title: "Chair", direction: "horizontal", extraTiles: ["گ","ب"] },
-    { id: nanoid(), word: "کاغذ", image: "https://img.freepik.com/premium-vector/hand-drawn-paper-cartoon-illustration_23-2151474658.jpg", title: "Paper", direction: "horizontal", extraTiles: ["ش","ک"] },
-    { id: nanoid(), word: "چسب", image: "https://png.pngtree.com/png-clipart/20250531/original/pngtree-cute-cartoon-glue-bottle-school-supplies-adhesive-craft-png-image_21103651.png", title: "Glue", direction: "horizontal", extraTiles: ["ل","ر"] },
-    { id: nanoid(), word: "خودکار", image: "https://img.pixers.pics/pho_wat(s3:700/FO/24/26/87/32/700_FO24268732_c18e5e8a5fd6dafd334266cad5337614.jpg,358,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,138,650,jpg)/wall-murals-pen-cartoon.jpg.jpg", title: "Pen", direction: "horizontal", extraTiles: ["ه","ن"] },
-    { id: nanoid(), word: "ماژیک", image: "https://cdn.vectorstock.com/i/500p/19/21/cheerful-cartoon-marker-pen-vector-51341921.jpg", title: "Whiteboard Marker", direction: "horizontal", extraTiles: ["ح","د"] },
-    { id: nanoid(), word: "پاک‌کن", image: "https://thumbs.dreamstime.com/z/cartoon-happy-eraser-illustration-53892555.jpg", title: "Eraser", direction: "horizontal", extraTiles: ["ز","ط"] },
-    { id: nanoid(), word: "کیف", image: "https://t4.ftcdn.net/jpg/15/14/49/97/360_F_1514499759_4ws45WRpsZvVJvGmbCP5iE5jNXoYgrbj.jpg", title: "Bag", direction: "horizontal", extraTiles: ["ض","و"] },
-    { id: nanoid(), word: "مداد", image: "https://i.etsystatic.com/40533556/r/il/b58af9/6112668721/il_1080xN.6112668721_qfn0.jpg", title: "Pencil", direction: "horizontal", extraTiles: ["ه","ص"] },
-    { id: nanoid(), word: "کتاب", image: "https://previews.123rf.com/images/dualororua/dualororua1707/dualororua170700423/83227038-vector-illustration-of-book-cartoon-on-pile-book.jpg", title: "Book", direction: "horizontal", extraTiles: ["ش","گ"] },
-    { id: nanoid(), word: "جامدادی", image: "https://previews.123rf.com/images/clairev/clairev1807/clairev180700082/114771248-pencil-case-theme-image-2-eps10-vector-illustration.jpg", title: "Pencil Case", direction: "horizontal", extraTiles: ["ط","پ"] },
-    { id: nanoid(), word: "دفتر", image: "https://charatoon.com/photo/3626.png", title: "Notebook", direction: "horizontal", extraTiles: ["ص","چ"] },
-    { id: nanoid(), word: "میز", image: "https://www.shutterstock.com/image-vector/school-desk-chair-260nw-613913594.jpg",title: "Desk / Table", direction: "horizontal", extraTiles: ["ط","ظ"] },
-    { id: nanoid(), word: "تراش", image: "https://thumbs.dreamstime.com/b/pencil-sharpener-15057545.jpg",title: "Sharpener", direction: "horizontal", extraTiles: ["ل","ی"] },
-  ],
+
+
+export default function SpellingGame() {
+
+  const {words, loading} =useWords();
+  const jobWords = words.filter((w)=>w.category === "شغل‌ها");
+  const fruitD = words.filter((w)=>w.category === "میوه");
+  const shopping = words.filter((w)=>w.category === "فروشگاه");
+  const supplySchool = words.filter((w)=>w.category === "وسایل مدرسه");
+
+  const partBody = cards.filter((w)=>w.category === "اعضای بدن");
+  const insects = cards.filter((w)=>w.category === "حشرات");
+  const healthy = cards.filter((w)=>w.category === "سلامتی");
+  const animal1 = cards.filter((w)=>w.category === "حیوانات");
+  const animal2 = cards.filter((w)=>w.category === "حیوانات 2");
+  
+
+
+//make data for collections
+const createNewData = (dataArray, direction = "horizontal", extraTiles = []) => {
+  return dataArray.map(item => ({
+    id: nanoid(),
+    word: item.word,
+    image: item.image,
+    title: item.english,
+    direction,
+    extraTiles
+  }));
+};
+
+// function for cards data
+const createNewDataCards = (dataArray, direction = "horizontal", extraTiles = []) => {
+  return dataArray.map(item => ({
+    id: nanoid(),
+    word: item.persianWord,
+    image: item.image,
+    title: item.englishWord,
+    direction,
+    extraTiles
+  }));
+};
+    
+
+  
+  
+// const ff = data(fruitD);
+  
+
+
+  
+  const collections = {
   "داستان پیک نیک": [
   { id: nanoid(), word: "ماشین", image: "https://img.freepik.com/premium-vector/car-vector-illustration-classic-red-car-cartoon-transportation_648083-206.jpg", title: "Car", direction: "horizontal", extraTiles: ["ر","ن","ب"] },
   // { id: nanoid(), word: "اسباب‌بازی", image: "https://thumbs.dreamstime.com/b/heap-toys-eps-vector-illustration-48098461.jpg", title: "Toy", direction: "horizontal", extraTiles: ["گ","د","ل"] },
@@ -56,11 +116,23 @@ const collections = {
   { id: nanoid(), word: "شاد", image: "https://c8.alamy.com/comp/G39KKD/vector-illustration-of-happy-man-cartoon-G39KKD.jpg", title: "Happy", direction: "horizontal", extraTiles: ["چ","ل"] },
   { id: nanoid(), word: "غمگین", image: "https://cdn.pixabay.com/photo/2025/07/01/17/42/ai-generated-9691043_1280.png", title: "ُSad", direction: "horizontal", extraTiles: ["ه","ص"] },
 ],
+"شغل ها":createNewData(jobWords, "horizontal", []),
+"میوه":createNewData(fruitD, "horizontal", []),
+"فروشگاه":createNewData(shopping, "horizontal", []),
+"وسایل مدرسه":createNewData(supplySchool, "horizontal", []),
+
+"اعضای بدن":createNewDataCards(partBody, "horizontal", []),
+"حشرات":createNewDataCards(insects, "horizontal", []),
+"سلامتی":createNewDataCards(healthy, "horizontal", []),
+"حیوانات1":createNewDataCards(animal1, "horizontal", []),
+"حیوانات2":createNewDataCards(animal2, "horizontal", []),
 
 
 };
+  
 
-export default function SpellingGame() {
+  
+
 
 // CollectionPicker.jsx
 
