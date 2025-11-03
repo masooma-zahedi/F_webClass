@@ -24,6 +24,7 @@ import SunWordsWords from "./sections/word/SunWordsWord";
 import TodayPlan from "./pages/TodayPlan";
 import SortableSentencesApp from "./sections/word/SortableSentencesApp";
 import BiographySlide from "./layouts/BiographySlide";
+import VideoWithCaptions from "./sections/alphabet/VideoWithCaptions";
 
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
                   { label: "معنی لغات جدید", path: "learnNewWords" },
                   { label: "اتاق بازی", path: "gameRoom" },
                   { label: "جدول کلمات", path: "tableWords" },
+                  { label: "فیلم کوتاه", path: "videoWithCaptions" },
                   // { label: "زبان", path: "language" },
                 ]}
               />
@@ -65,6 +67,7 @@ export default function App() {
             <Route path="learnNewWords" element={<LearnNewWords />} />
             <Route path="gameRoom/*" element={<GameRoom />} />
             <Route path="tableWords/*" element={<TableWords />} />
+            <Route path="videoWithCaptions/*" element={<VideoWithCaptions />} />
 
             {/* <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />
