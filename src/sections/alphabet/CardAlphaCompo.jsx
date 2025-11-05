@@ -536,13 +536,6 @@ export const CardAlphaCompo = () => {
           </div>
         )})}
       </div>
-<div className="text-center">
-      <div className="border border-warning mx-auto" style={{width:"600px",height:"600px"}}>
-        {/* <iframe src="/sounds/chick.mp4" title="description" className="w-100 h-100     "></iframe> */}
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/QahSR-a6raQ?si=FII3PvsGyKAOOvM-&amp;start=1200" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-
-</div>
 
     </section>
     </>

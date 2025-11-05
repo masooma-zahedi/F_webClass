@@ -17,7 +17,7 @@ const defaultTopics = {
 "سفر خانوادگی": [
   "لِیلا وَ مَکس چَمدان‌هایِ خود را آماده کَردَند.",
   "پِدَر ماشین را بِنزین زَد.",
-  "خُوراکی وَ آب دَر ماشین گُذاشتَند.",
+  "آنها خُوراکی وَ آب دَر ماشین گُذاشتَند.",
   "هَمه سَوارِ ماشین شُدَند.",
   "ماشین از شَهر بیرون رَفت.",
   "دَر راه، آن‌ها آواز خواندَند وَ خَندیدَند.",
@@ -434,7 +434,7 @@ export default function SortableSentencesApp({ initialTopics } = {}) {
             </div>
 
             <div className="controls" role="toolbar" aria-label="ابزارها">
-              <button className="btn secondary" onClick={resetCurrentToOriginal} disabled={isChecked}>بازنشانی</button>
+              {/* <button className="btn secondary" onClick={resetCurrentToOriginal} disabled={isChecked}>بازنشانی</button> */}
               <button className="btn secondary" onClick={shuffleCurrent} disabled={isChecked}>پخش تصادفی</button>
             </div>
           </div>
