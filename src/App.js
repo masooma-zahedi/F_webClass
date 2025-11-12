@@ -67,7 +67,8 @@ export default function App() {
             <Route path="learnNewWords" element={<LearnNewWords />} />
             <Route path="gameRoom/*" element={<GameRoom />} />
             <Route path="tableWords/*" element={<TableWords />} />
-            <Route path="videoWithCaptions/*" element={<VideoWithCaptions />} />
+            <Route path="videoWithCaptions/*" element={<VideoWithCaptions title="قصه کوتاه امروز"
+        description="متن فارسی داستان زیر را بخوانید." />} />
 
             {/* <Route path="sentenceBuilder" element={<SentenceBuilder />} />
             <Route path="dragDropQuiz" element={<DragDropQuiz />} />

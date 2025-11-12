@@ -1,11 +1,26 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // کامپوننت ویدیو با زیرنویس
-const VideoWithCaptionsSample = ({ videoSrc, captionKey }) => {
+const VideoWithCaptionsSample = ({ title, description, videoFileName, videoSrc, captionKey }) => {
   const videoRef = useRef(null);
   const [currentCaption, setCurrentCaption] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
 
   const allCaptions = {
     myvideo: [
@@ -60,11 +75,37 @@ const VideoWithCaptionsSample = ({ videoSrc, captionKey }) => {
 
   return (
     <div className="container mt-4">
-      <div className="position-relative" style={{ maxWidth: "700px", margin: "auto" }}>
-        <video ref={videoRef} width="100%" height="800px" controls className="rounded ">
+      <div className="position-relative border " style={{ maxWidth: "800px", margin: "auto" }}>
+        {/* <video ref={videoRef} width="100%" height="800px" controls className="rounded ">
           <source src={videoSrc} type="video/mp4" />
           مرورگر شما ویدیو را پشتیبانی نمی‌کند.
-        </video>
+        </video>  */}
+            {/* <div className="d-flex justify-content-center"> */}
+              <Card
+                className=" shadow-sm rounded-4 border border-danger bg-warning text-center "
+                style={{ maxWidth: "780px", marginLeft: "auto", marginRight: "auto" }}
+              >
+                <Card.Body>
+                  <Card.Title className="fs-4 fw-bold mb-2">{title}</Card.Title>
+                  <Card.Text className="mb-3">{description}</Card.Text>
+                    <div className="container mt-4">
+                      <div className="position-relative" style={{ maxWidth: "750px",height:"650px",maxHeight:"", margin: "auto" }}>
+                        <video ref={videoRef} width="100%" height="100%"  controls className="rounded h-sm-50 h-md-75 h-lg-75">
+                          <source src={videoFileName} type="video/mp4" height="100%" />
+                          مرورگر شما ویدیو را پشتیبانی نمی‌کند.
+                        </video>
+                      </div>
+                    </div>
+                  <Button
+                    variant={isPlaying ? "danger" : "success"}
+                    onClick={handlePlayPause}
+                    className="px-4 py-2 fw-bold"
+                  >
+                    {isPlaying ? "توقف" : "پخش"}
+                  </Button>
+                </Card.Body>
+              </Card>
+            {/* </div> */}
 
         {currentCaption && (
           <div
