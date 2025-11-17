@@ -30,7 +30,7 @@ const useWords = () => {
   return { words, loading };
 };
 
-
+ 
 
 // اگر WordCardsSingle نسخهٔ فعلی‌ت رو داری، آن را ایمپورت کن.
 // در این مثال فرض می‌کنیم WordCardsSingle یک prop به نام `initialWords` می‌پذیرد.

@@ -16,13 +16,13 @@ function makeId() {
 const defaultTopics = {
 "سفر خانوادگی": [
   "لِیلا وَ مَکس چَمدان‌هایِ خود را آماده کَردَند.",
-  "پِدَر ماشین را بِنزین زَد.",
   "آنها خُوراکی وَ آب دَر ماشین گُذاشتَند.",
+  // "پِدَر قَبل اَز حَرِکَت ماشین را بِنزین زَد.",
   "هَمه سَوارِ ماشین شُدَند.",
   "ماشین از شَهر بیرون رَفت.",
   "دَر راه، آن‌ها آواز خواندَند وَ خَندیدَند.",
-  "بَه پَارکِ سَرزَندِه رَسیدَند.",
-  "هَمه رویِ عَلف‌ها نِشَستَند وَ ناهار خُوردَند.",
+  "به پارکِ سَرسَبزی رَسیدَند.",
+  "هَمه رویِ چمن ها نِشَستَند وَ ناهار خُوردَند.",
 ],
 "آماده شُدَن بَرا‌یِ خواب": [
   "کُودَک اَسباب‌بازی‌هایَش را جَمع می‌کُنَد.",
@@ -434,7 +434,7 @@ export default function SortableSentencesApp({ initialTopics } = {}) {
             </div>
 
             <div className="controls" role="toolbar" aria-label="ابزارها">
-              {/* <button className="btn secondary" onClick={resetCurrentToOriginal} disabled={isChecked}>بازنشانی</button> */}
+              <button className="btn secondary" onClick={resetCurrentToOriginal} disabled={isChecked}>بازنشانی</button>
               <button className="btn secondary" onClick={shuffleCurrent} disabled={isChecked}>پخش تصادفی</button>
             </div>
           </div>

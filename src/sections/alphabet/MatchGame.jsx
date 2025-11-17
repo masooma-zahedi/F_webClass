@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { nanoid } from "nanoid";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {cards} from "./LearnNewWords";
+
 
 const items1 = [
   { id: 1, word: 'ساندِویچ', image: 'https://www.sargento.com/assets/Uploads/Recipe/Image/Sargento11501.jpg' },
@@ -135,6 +138,44 @@ const MatchGame = () => {
   const [disableClicks, setDisableClicks] = useState(false);
   const [alert, setAlert] = useState('');
   const [winner, setWinner] = useState(null);
+
+
+// ************get data for game from LearnNewWords**************
+
+  const partBody = cards.filter((w)=>w.category === "اعضای بدن");
+  const insects = cards.filter((w)=>w.category === "حشرات");
+  const healthy = cards.filter((w)=>w.category === "سلامتی");
+  const animal1 = cards.filter((w)=>w.category === "حیوانات");
+  const animal2 = cards.filter((w)=>w.category === "حیوانات 2");
+  const jobs = cards.filter((w)=>w.category === "شغل‌ها");
+
+//make data for collections
+const createNewData = (dataArray, extraTiles = []) => {
+  return dataArray.map(item => ({
+    id: nanoid(),
+    word: item.word,
+    image: item.image,
+  }));
+};
+
+// function for cards data
+const createNewDataCards = (dataArray,) => {
+  return dataArray.map(item => ({
+    id: nanoid(),
+    word: item.persianWord,
+    image: item.image,
+  }));
+};
+
+const insect1= createNewDataCards(insects)
+const partBody1= createNewDataCards(partBody)
+const healthy1= createNewDataCards(healthy)
+const animal11= createNewDataCards(animal1)
+const animal21= createNewDataCards(animal2)
+const jobs1= createNewDataCards(jobs)
+
+
+
   // 
 
   useEffect(() => {
@@ -222,6 +263,7 @@ const MatchGame = () => {
   // new change *****************************
     const stylebg = {
     backgroundColor:'rgba(232, 231, 231, 0.99)'
+    
   }
 // test
   const questionsqq = (e, i) => {
@@ -269,6 +311,12 @@ const MatchGame = () => {
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(bathItems ,'item7')}>وسایل حمام</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(schoolSupplies ,'item8')}>وسایل مدرسه</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(paeezVaKharposht ,'item9')}>پاییز و خارپشت</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(insect1 ,'item10')}>حشرات</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(partBody1 ,'item11')}>اعضای بدن</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(healthy1 ,'item12')}>سلامتی</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(animal11 ,'item13')}>حیوانات 1</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(animal21 ,'item14')}>حیوانات 2</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(jobs1 ,'item15')}>شغل ها</button>
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -311,6 +359,9 @@ const MatchGame = () => {
 
         <div className="row g-3">
           {data.map((item, index) => {
+            if(index < 21){
+              
+            }
             const isFlipped =
               matchedIds.includes(item.id) ||
               selectedCards.find(c => c.word === item.word && c.type === item.type);

@@ -9,6 +9,22 @@ import {
   ListGroup,
   Form,
 } from "react-bootstrap";
+import {action4, natureQuestions} from "./DragDropQuiz";
+// console.log(action4);
+
+
+
+
+const createNewData = (dataArray = []) => {
+  if (!Array.isArray(dataArray)) return [];
+  return dataArray.map(item => ({
+    sentence: item.sentence,
+    words: [
+      { text: item.correctWord, image: item.image, translation: item.meaning }
+    ],
+  }));
+};
+// console.log(createNewData(action4.word.text));
 
 
 const lessonGroups = [
@@ -260,6 +276,18 @@ const lessonGroups = [
         }
       ]
     },
+    // جملات فعالیت ها4
+    {
+      title: "جُملات فعالیت 4",
+      imgSide:"https://static.vecteezy.com/system/resources/previews/045/880/923/non_2x/little-boy-having-good-idea-a-bubble-with-idea-lamp-sign-isolated-on-white-background-vector.jpg",
+      slides:createNewData(action4 || [])
+    },
+    // طبیعت
+    {
+      title: "طبیعت",
+      imgSide:"https://toppng.com/uploads/preview/success-kid-png-11552334589rpayzs0eub.png",
+      slides:createNewData(natureQuestions || [])
+    },
 
 
 ];
@@ -285,10 +313,11 @@ const SentenceObject = () => {
   const [highlightChar, setHighlightChar] = useState("");
   const [stripDiacritics, setStripDiacritics] = useState(true);
 
-  const currentGroup = lessonGroups[activeGroupIndex];
-  const currentSlides = currentGroup.slides;
-  const currentWords = currentSlides[activeSlideIndex].words;
-
+  const currentGroup = lessonGroups[activeGroupIndex] || {};
+const currentSlides = Array.isArray(currentGroup.slides) ? currentGroup.slides : [];
+const currentWords = (currentSlides[activeSlideIndex] && Array.isArray(currentSlides[activeSlideIndex].words))
+  ? currentSlides[activeSlideIndex].words
+  : [];
   const handleGroupSelect = (index, i,imgS) => {
     setMainTitle(i);
     setImgSide(imgS);

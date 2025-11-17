@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { questions1, questions2, questions3 } from './dataWord';
 
-const questions1 = [
+const action1 = [
       {
         sentence: 'مَن هَر روز به ___ می‌رَوَم.',
         correctWord: 'مدرسه',
@@ -124,8 +124,7 @@ const questions1 = [
     image: 'https://img.freepik.com/free-vector/family-living-home_1308-25009.jpg'
   }
 ]
-const questions2 = [
-    // masooma
+const action2 = [
       {
         sentence: 'او ___ وَ اُفتاد.',
         correctWord: 'لیز خورد',
@@ -207,7 +206,7 @@ const questions2 = [
     
 ]
 
-const questions3 = [
+const action3 = [
   {
     sentence: 'او جَعبِه را از روی ___ بُلَند کَرد.',
     correctWord: 'میز',
@@ -330,18 +329,308 @@ const questions3 = [
   }
 ];
 
+const action4 = [
+  {
+    sentence: 'مَن هَر روز با دوستَم به ___ می‌رَوَم.',
+    correctWord: 'مَدرَسِه',
+    meaning: 'school',
+    options: ['گُل‌فُروشّی', 'مَدرَسِه', 'کِتاب‌خانِه'],
+    image: 'https://media.istockphoto.com/id/1414172797/vector/happy-cartoon-children-playing-in-front-of-school-building-back-to-school-clipart.jpg?s=612x612&w=0&k=20&c=H4-GK457wvpeiK4eoUiQ-UAj4KPHbOWu1MKVmB0BtMM='
+  },
+  {
+    sentence: 'او دَر ___ کِتاب می‌خوانَد.',
+    correctWord: 'کِتاب‌خانِه',
+    meaning: 'library',
+    options: ['خانِه', 'کِتاب‌خانِه', 'خِیابان'],
+    image: 'https://img.freepik.com/premium-photo/there-is-cartoon-picture-library-with-books-shelves_1035769-31453.jpg'
+  },
+  {
+    sentence: 'پِدَرَم دَر ___ کار می‌کُنَد.',
+    correctWord: 'بیمارِستان',
+    meaning: 'hospital',
+    options: ['مَدرَسِه', 'پارک', 'بیمارِستان'],
+    image: 'https://thumbs.dreamstime.com/b/young-doctor-standing-front-hospital-building-cartoon-155998765.jpg'
+  },
+  {
+    sentence: 'ما بَرای خَریدِ گُل به ___ رَفتیم.',
+    correctWord: 'گُل‌فُروشّی',
+    meaning: 'flower shop',
+    options: ['مَدرَسِه', 'گُل‌فُروشّی', 'کِتاب‌خانِه'],
+    image: 'https://thumbs.dreamstime.com/b/flower-shop-interior-green-natural-decorations-woman-florist-seller-cartoon-design-vector-illustration-flower-shop-interior-green-139043276.jpg'
+  },
+  {
+    sentence: 'سارا با ___ به پارک رَفت.',
+    correctWord: 'دوچَرخه',
+    meaning: 'bicycle',
+    options: ['ماشین', 'مِداد', 'دوچَرخه'],
+    image: 'https://img.freepik.com/premium-vector/cute-girl-cycling-bicycle-cartoon-vector-illustration_1080480-151956.jpg'
+  },
+  {
+    sentence: 'او اَز ___ بَرای خوردَنِ سوپ اِستِفادِه کَرد.',
+    correctWord: 'قاشُق',
+    meaning: 'spoon',
+    options: ['چاقو', 'ماهیتابِه', 'قاشُق'],
+    image: 'https://www.shutterstock.com/image-vector/cute-boy-having-lunch-preschool-600nw-1705328893.jpg'
+  },
+  {
+    sentence: 'مادَر بَرای ناهار ___ پُخت.',
+    correctWord: 'قُورمِه‌سَبزی',
+    meaning: 'ghormeh sabzi',
+    options: ['قُورمِه‌سَبزی', 'شیرینی', 'کِتاب‌خانِه'],
+    image: 'https://cdn.nody.ir/files/2021/06/12/nody-%D8%B9%DA%A9%D8%B3-%D8%AA%D8%B2%DB%8C%DB%8C%D9%86-%D9%82%D9%88%D8%B1%D9%85%D9%87-%D8%B3%D8%A8%D8%B2%DB%8C-1623479060.jpg'
+  },
+  {
+    sentence: 'دَر فَصلِ تابِستان هَوا بِسیار ___ اَست.',
+    correctWord: 'گَرم',
+    meaning: 'hot',
+    options: ['بارانی', 'سَرد', 'گَرم'],
+    image: 'https://static.vecteezy.com/system/resources/previews/002/695/317/non_2x/stickman-businessman-character-walks-in-hot-weather-and-his-tongue-is-out-cartoon-illustration-free-vector.jpg'
+  },
+  {
+    sentence: 'ما دَر ___ ناهار می‌خوریم.',
+    correctWord: 'سالُنِ‌غِذاخوری',
+    meaning: 'cafeteria / dining hall',
+    options: ['مَدرَسِه', 'کِتاب‌خانِه', 'سالُنِ‌غِذاخوری'],
+    image: 'https://images.stockcake.com/public/6/f/7/6f73e604-1c31-4278-a8e7-64f5c5e1ee52_large/school-cafeteria-buzz-stockcake.jpg'
+  },
+  {
+    sentence: 'پِدَر مَن یِک ___ جَدید خَرید.',
+    correctWord: 'ماشین',
+    meaning: 'car',
+    options: ['دوچَرخه‌سواری', 'مِداد', 'ماشین'],
+    image: 'https://t4.ftcdn.net/jpg/01/75/41/99/360_F_175419966_DvmsbkV48YXpByUUcbFamnYq7KEvDTuG.jpg'
+  },
+  {
+    sentence: 'کودَکان دَر ___ بازی می‌کُنَند.',
+    correctWord: 'زَمین‌بازی',
+    meaning: 'playground',
+    options: ['زَمین‌بازی', 'مَدرَسِه', 'اتاق'],
+    image: 'https://thumbs.dreamstime.com/b/autumn-playground-children-playing-park-illustration-390011742.jpg'
+  },
+  {
+    sentence: 'او دَر ___ کار می‌کُنَد و نان می‌پَزد.',
+    correctWord: 'نانُوایّی',
+    meaning: 'bakery',
+    options: ['مَدرَسِه', 'نانُوایّی', 'بی‌مارِستان'],
+    image: 'https://t3.ftcdn.net/jpg/09/11/65/24/360_F_911652488_Sa0cd8hU0NFrrHiVPZ9T1H4behczTFhT.jpg'
+  },
+  {
+    sentence: 'ما دیشَب به ___ رَفتیم و شام خُوردیم.',
+    correctWord: 'رِستُوران',
+    meaning: 'restaurant',
+    options: ['خانِه', 'رِستُوران', 'مَدرَسِه'],
+    image: 'https://thumbs.dreamstime.com/b/vibrant-cartoon-restaurant-interior-diners-waiters-ai-generated-illustration-lively-cartoon-illustration-modern-323741928.jpg'
+  },
+  {
+    sentence: 'دَر ___ می‌توانیم دارو بِخَریم.',
+    correctWord: 'داروخُونِه',
+    meaning: 'pharmacy',
+    options: ['کِتاب‌خانِه', 'داروخُونِه', 'بی‌مارِستان'],
+    image: 'https://thumbs.dreamstime.com/b/pharmacist-preparing-medication-pharmacy-counter-shelves-medicine-vector-pharmacist-preparing-medication-410663409.jpg'
+  },
+  {
+    sentence: 'او دَر ___ می‌نِشینَد وَ نِقّاشی می‌کِشَد.',
+    correctWord: 'اتاقِ‌خواب',
+    meaning: 'bedroom',
+    options: ['مَدرَسِه', 'اتاقِ‌خواب', 'رِستُوران'],
+    image: 'https://static.vecteezy.com/system/resources/previews/000/432/331/non_2x/boy-and-girl-drawing-picture-in-bedroom-vector.jpg'
+  },
+  {
+    sentence: 'دَر ___ فیلم تَماشا کَردیم.',
+    correctWord: 'سینَما',
+    meaning: 'cinema',
+    options: ['خانِه', 'مَدرَسِه', 'سینَما'],
+    image: 'https://images.stockcake.com/public/1/2/4/12430b33-bb89-4a00-b88f-81547b76107a_large/animated-cinema-experience-stockcake.jpg'
+  },
+  {
+    sentence: 'او با دوستانَش دَر ___ فوتبَال بازی کَرد.',
+    correctWord: 'وَرزِشگاه',
+    meaning: 'stadium',
+    options: ['رِستُوران', 'وَرزِشگاه', 'کِتاب‌خانِه'],
+    image: 'https://c8.alamy.com/comp/2J031DA/cartoon-gym-interior-room-with-sport-fitness-equipment-sport-elements-fitness-room-interior-vector-illustration-dumbbells-treadmill-and-exercise-2J031DA.jpg'
+  },
+  {
+    sentence: 'دَر ___ وَسایِل زیادی مِثل میز وَ صَندَلی می‌سازَند.',
+    correctWord: 'کارگاه',
+    meaning: 'workshop',
+    options: ['مَدرَسِه', 'کارگاه', 'خانِه'],
+    image: 'https://t3.ftcdn.net/jpg/00/70/92/30/360_F_70923061_CIbmHC9Tx2pbfIWHJzv6UeAMWw54YNIb.jpg'
+  },
+  {
+    sentence: 'اِمروز به ___ بَرای خَرید رَفتیم.',
+    correctWord: 'بازار',
+    meaning: 'market',
+    options: ['بازار', 'مَدرَسِه', 'کِتاب‌خانِه'],
+    image: 'https://imgcdn.stablediffusionweb.com/2024/12/10/59da0982-3def-41f7-a3bd-ffde20377b5b.jpg'
+  },
+  {
+    sentence: 'کودَکان دَر روزِ تَعطیل به ___ می‌رَوَند.',
+    correctWord: 'پارک',
+    meaning: 'park',
+    options: ['مَدرَسِه', 'پارک', 'کارگاه'],
+    image: 'https://thumbs.dreamstime.com/b/autumn-playground-children-playing-park-illustration-390011742.jpg'
+  }
+];
+const natureQuestions = [
+  {
+    sentence: 'در آسمان ___ می‌تابَد.',
+    correctWord: 'خورشید',
+    correctMeaning: 'sun',
+    options: ['ماه', 'خورشید', 'اَبَر'],
+    image: 'https://cdn-icons-png.flaticon.com/512/3222/3222691.png'
+  },
+  {
+    sentence: 'در فَصلِ بِهار، ___ باز می‌شَوَند.',
+    correctWord: 'گُل‌ها',
+    correctMeaning: 'flowers',
+    options: ['دِرَختان', 'بَرف‌ها', 'گُل‌ها'],
+    image: 'https://cdn-icons-png.flaticon.com/512/2917/2917996.png'
+  },
+  {
+    sentence: 'ما در ___ قَدَم می‌زَنیم.',
+    correctWord: 'جَنگَل',
+    correctMeaning: 'forest',
+    options: ['خانه', 'جَنگَل', 'مَدرَسه'],
+    image: 'https://cdn-icons-png.flaticon.com/512/2235/2235990.png'
+  },
+  {
+    sentence: '___ از آسمان می‌بارَد.',
+    correctWord: 'باران',
+    correctMeaning: 'rain',
+    options: ['خورشید', 'باد', 'باران'],
+    image: 'https://cdn-icons-png.flaticon.com/512/1146/1146869.png'
+  },
+  {
+    sentence: 'در کِنارِ رودخانه، ___ دیده می‌شود.',
+    correctWord: 'ماهی',
+    correctMeaning: 'fish',
+    options: ['ماهی', 'دِرَخت', 'اَبَر'],
+    image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png'
+  },
+  {
+    sentence: 'در پاییز، بَرگ‌ها از ___ می‌اُفتَند.',
+    correctWord: 'دِرَخت',
+    correctMeaning: 'tree',
+    options: ['اَبَر', 'دِرَخت', 'زَمین'],
+    image: 'https://cdn-icons-png.flaticon.com/512/766/766540.png'
+  },
+  {
+    sentence: 'در آسمانِ شَب، ___ می‌دَرَخشَند.',
+    correctWord: 'سِتاره‌ها',
+    correctMeaning: 'stars',
+    options: ['دِرَخت‌ها', 'اَبَرها', 'سِتاره‌ها'],
+    image: 'https://cdn-icons-png.flaticon.com/512/7079/7079182.png'
+  },
+  {
+    sentence: '___ در کوه‌ها زِندِگی می‌کند.',
+    correctWord: 'بُزکوهی',
+    correctMeaning: 'mountain goat',
+    options: ['ماهی', 'بُزکوهی', 'مُرغ'],
+    image: 'https://cdn-icons-png.flaticon.com/512/616/6164087.png'
+  },
+  {
+    sentence: 'در صَحر‌ا، شِن‌ها بِسیار ___ هستند.',
+    correctWord: 'داغ',
+    correctMeaning: 'hot',
+    options: ['سَرد', 'داغ', 'نَرْم'],
+    image: 'https://cdn-icons-png.flaticon.com/512/4150/4150985.png'
+  },
+  {
+    sentence: '___ روی گُل نِشَستِه است.',
+    correctWord: 'پَروانه',
+    correctMeaning: 'butterfly',
+    options: ['پَرَنده', 'پَروانه', 'زَنبور'],
+    image: 'https://cdn-icons-png.flaticon.com/512/3673/3673224.png'
+  },
+  {
+    sentence: 'در جَنگَل صَدای ___ شِنیده می‌شود.',
+    correctWord: 'پَرَنده‌ها',
+    correctMeaning: 'birds',
+    options: ['دِرَخت‌ها', 'پَرَنده‌ها', 'اَبَرها'],
+    image: 'https://cdn-icons-png.flaticon.com/512/616/616554.png'
+  },
+  {
+    sentence: 'در زِمِستان، زَمین پُر از ___ می‌شود.',
+    correctWord: 'بَرف',
+    correctMeaning: 'snow',
+    options: ['بَرف', 'باران', 'گُل'],
+    image: 'https://cdn-icons-png.flaticon.com/512/415/415733.png'
+  },
+  {
+    sentence: '___ در باغ می‌وَزَد.',
+    correctWord: 'باد',
+    correctMeaning: 'wind',
+    options: ['خورشید', 'اَبَر', 'باد'],
+    image: 'https://cdn-icons-png.flaticon.com/512/1506/1506278.png'
+  },
+  {
+    sentence: 'دَریا پُر از ___ است.',
+    correctWord: 'آب',
+    correctMeaning: 'water',
+    options: ['بَرگ', 'آب', 'سَنگ'],
+    image: 'https://cdn-icons-png.flaticon.com/512/728/728093.png'
+  },
+  {
+    sentence: 'در آسمان بَعد از باران، ___ دیده می‌شود.',
+    correctWord: 'رَنگین‌کَمان',
+    correctMeaning: 'rainbow',
+    options: ['رَنگین‌کَمان', 'خورشید', 'اَبَر'],
+    image: 'https://cdn-icons-png.flaticon.com/512/3345/3345897.png'
+  },
+  {
+    sentence: 'در کِنارِ دَریا ___ دیده می‌شود.',
+    correctWord: 'شِن',
+    correctMeaning: 'sand',
+    options: ['ماهی', 'شِن', 'دِرَخت'],
+    image: 'https://cdn-icons-png.flaticon.com/512/2947/2947433.png'
+  },
+  {
+    sentence: '___ از کوه پایین می‌آیَد.',
+    correctWord: 'رودخانه',
+    correctMeaning: 'river',
+    options: ['رودخانه', 'اَبَر', 'دِرَخت'],
+    image: 'https://cdn-icons-png.flaticon.com/512/3139/3139062.png'
+  },
+  {
+    sentence: 'در باغ، زَنبورها روی ___ می‌نِشینَند.',
+    correctWord: 'گُل',
+    correctMeaning: 'flower',
+    options: ['بَرگ', 'گُل', 'دِرَخت'],
+    image: 'https://cdn-icons-png.flaticon.com/512/3185/3185855.png'
+  },
+  {
+    sentence: 'در کوه، هَوای ___ وُجود دارد.',
+    correctWord: 'سَرد',
+    correctMeaning: 'cold',
+    options: ['گَرم', 'سَرد', 'مَرطوب'],
+    image: 'https://cdn-icons-png.flaticon.com/512/869/869890.png'
+  },
+  {
+    sentence: 'خورشید در ___ غروب می‌کند.',
+    correctWord: 'اُفُق',
+    correctMeaning: 'horizon',
+    options: ['اُفُق', 'کوه', 'دَریا'],
+    image: 'https://cdn-icons-png.flaticon.com/512/3752/3752080.png'
+  }
+];
+
+
+
+
 
 // توجه: فرض شده questions1, questions2, questions3 در همین فایل یا در بالاتر وارد شده‌اند.
 // اگر در جای دیگری هستند، آنها را ایمپورت کنید یا به صورت props ارسال کنید.
 
 const DragDropQuiz = () => {
-  const [questions, setQuestions] = useState(questions1);
-  const [idModal, setIdModal] = useState("question1");
+  const [questions, setQuestions] = useState(action1);
+  const [idModal, setIdModal] = useState("action1");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [droppedWord, setDroppedWord] = useState(null); // در این نسخه "کلمهٔ انتخاب‌شده"
   const [isCorrect, setIsCorrect] = useState(null);
 
   const currentQuestion = questions[currentIndex];
+
+
 
   // در این نسخه دیگر درگ/دراپ نداریم؛ با کلیک روی یک گزینه، آن کلمه در جای خالی قرار می‌گیرد
   const placeWord = (word) => {
@@ -433,14 +722,20 @@ const DragDropQuiz = () => {
                 </div>
                 <div className="modal-body">
                   <div className="d-flex flex-wrap">
-                    <button className="btn  shadow-sm border  mx-2" style={stylebg} onClick={() => questionsqq(questions1, 'question1')}>
-                      مرحله 1
+                    <button className="btn  shadow-sm border  mx-2" style={stylebg} onClick={() => questionsqq(action1, 'question1')}>
+                      فعالیت 1
                     </button>
-                    <button className="btn shadow-sm border  mx-2" style={stylebg} onClick={() => questionsqq(questions2, 'question2')}>
-                      مرحله 2
+                    <button className="btn shadow-sm border  mx-2" style={stylebg} onClick={() => questionsqq(action2, 'question2')}>
+                      فعالیت 2
                     </button>
-                    <button className="btn shadow-sm border mx-2" style={stylebg} onClick={() => questionsqq(questions3, 'question3')}>
-                      مرحله 3
+                    <button className="btn shadow-sm border mx-2" style={stylebg} onClick={() => questionsqq(action3, 'question3')}>
+                     فعالیت 3
+                    </button>
+                    <button className="btn shadow-sm border mx-2" style={stylebg} onClick={() => questionsqq(action4, 'question4')}>
+                     فعالیت 4
+                    </button>
+                    <button className="btn shadow-sm border mx-2" style={stylebg} onClick={() => questionsqq(natureQuestions, 'natureQuestions')}>
+                     طبیعت
                     </button>
                   </div>
                 </div>
@@ -554,3 +849,4 @@ const DragDropQuiz = () => {
 
 export default DragDropQuiz;
 
+export{action4, natureQuestions};
