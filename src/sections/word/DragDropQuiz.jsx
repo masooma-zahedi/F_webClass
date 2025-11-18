@@ -331,6 +331,7 @@ const action3 = [
 
 const action4 = [
   {
+<<<<<<< HEAD
     sentence: 'مَن هَر روز با دوستَم به ___ می‌رَوَم.',
     correctWord: 'مَدرَسِه',
     meaning: 'school',
@@ -338,6 +339,8 @@ const action4 = [
     image: 'https://media.istockphoto.com/id/1414172797/vector/happy-cartoon-children-playing-in-front-of-school-building-back-to-school-clipart.jpg?s=612x612&w=0&k=20&c=H4-GK457wvpeiK4eoUiQ-UAj4KPHbOWu1MKVmB0BtMM='
   },
   {
+=======
+>>>>>>> readyTest
     sentence: 'او دَر ___ کِتاب می‌خوانَد.',
     correctWord: 'کِتاب‌خانِه',
     meaning: 'library',
@@ -435,6 +438,17 @@ const action4 = [
     options: ['مَدرَسِه', 'اتاقِ‌خواب', 'رِستُوران'],
     image: 'https://static.vecteezy.com/system/resources/previews/000/432/331/non_2x/boy-and-girl-drawing-picture-in-bedroom-vector.jpg'
   },
+<<<<<<< HEAD
+=======
+    {
+    sentence: 'مَن هَر روز با دوستَم به ___ می‌رَوَم.',
+    correctWord: 'مَدرَسِه',
+    meaning: 'school',
+    options: ['گُل‌فُروشّی', 'مَدرَسِه', 'کِتاب‌خانِه'],
+    image: 'https://media.istockphoto.com/id/537076949/vector/school-building-in-flat-style.jpg?s=612x612&w=0&k=20&c=RWzAsSEFxbT5mm1QUzvgqliqEVYrnY0Rvybhjbjj3jE='
+  },
+
+>>>>>>> readyTest
   {
     sentence: 'دَر ___ فیلم تَماشا کَردیم.',
     correctWord: 'سینَما',
