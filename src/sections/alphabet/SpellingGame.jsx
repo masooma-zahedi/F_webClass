@@ -52,6 +52,8 @@ export default function SpellingGame() {
   const healthy = cards.filter((w)=>w.category === "سلامتی");
   const animal1 = cards.filter((w)=>w.category === "حیوانات");
   const animal2 = cards.filter((w)=>w.category === "حیوانات 2");
+  const homeTools = cards.filter((w)=>w.category === "وسایل خانه");
+  const houseParts = cards.filter((w)=>w.category === "بخش‌های خانه");
   
 
 
@@ -126,6 +128,8 @@ const createNewDataCards = (dataArray, direction = "horizontal", extraTiles = []
 "سلامتی":createNewDataCards(healthy, "horizontal", []),
 "حیوانات1":createNewDataCards(animal1, "horizontal", []),
 "حیوانات2":createNewDataCards(animal2, "horizontal", []),
+"وسایل خانه":createNewDataCards(homeTools, "horizontal", []),
+"بخش های خانه":createNewDataCards(houseParts, "horizontal", []),
 
 
 };

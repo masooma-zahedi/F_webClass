@@ -2,7 +2,6 @@
   "name": "my-web-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://masooma-zahedi.github.io/F_webClass",
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
     "@popperjs/core": "^2.11.8",
