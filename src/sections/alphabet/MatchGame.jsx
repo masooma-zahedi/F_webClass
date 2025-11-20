@@ -118,6 +118,19 @@ const paeezVaKharposht = [
   { id: 10, word: "غمگین", image: "https://cdn.pixabay.com/photo/2025/07/01/17/42/ai-generated-9691043_1280.png" },
 ];
 
+const classG =[
+  { id: 1, word: "ا", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/08-10-الف-1.jpg` },
+  { id: 2, word: "ب", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/08-10-ب-1.png` },
+  { id: 3 , word: "ت", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/08-10-ت-1.png` },
+  { id: 4 , word: "د", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/08-10-د-1.png` },
+  { id: 5 , word: "ر", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/08-10-ر-1.png` },
+  { id: 6 , word: "س", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/08-10-س-1.png` },
+  { id: 7 , word: "ش", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/10-22-2-ش.png` },
+  { id: 8 , word: "ک", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/11-1-1-ک.png` },
+  { id: 9, word: "م", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/11-1-1-م.png` },
+  { id: 10, word: "ن", image: `${process.env.PUBLIC_URL}/images/assetAlpha/cardAlpha/exampleAlpha/11-1-1-ن.png` },
+]
+
 
 
 
@@ -317,6 +330,7 @@ const jobs1= createNewDataCards(jobs)
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(animal11 ,'item13')}>حیوانات 1</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(animal21 ,'item14')}>حیوانات 2</button>
                     <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(jobs1 ,'item15')}>شغل ها</button>
+                    <button className='btn shadow-sm border  m-2' style={stylebg} onClick={()=>questionsqq(classG ,'item16')}>classG</button>
                   </div>
                 </div>
                 <div class="modal-footer">

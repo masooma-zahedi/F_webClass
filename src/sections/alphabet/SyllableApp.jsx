@@ -16,7 +16,7 @@ import { database, ref, set, onValue, remove, push } from ".././firebase";
 
 const SyllableApp = () => {
   const inputRef = useRef(null);
-  const [showDelete, setShowDelete] = useState(false);
+  const [showDelete, setShowDelete] = useState(true);
   const [listVisible, setListVisible] = useState(true);
   const [words, setWords] = useState([]);
   const [formVisible, setFormVisible] = useState(false);

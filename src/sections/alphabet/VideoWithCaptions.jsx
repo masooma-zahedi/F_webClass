@@ -153,6 +153,12 @@ export default function VideoWithCaptions() {
       videoSrc: "/video/lazyGrasshopper.mp4",
       captionKey: "",
     },
+    {
+      label: "روزهای هفته",
+      path: "weekDays",
+      videoSrc: "/video/days-of-week.mp4",
+      captionKey: "",
+    },
   ];
 
   return (
